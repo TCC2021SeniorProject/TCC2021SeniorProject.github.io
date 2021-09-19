@@ -57,7 +57,7 @@ $(function() {
   });
 
   var initialWidth = $( window ).width();
-  if (initialWidth < 767) {    
+  if (initialWidth < 777) {    
     nav_right_items.hide();
     nav_right_items.css({
       width: 0
@@ -168,6 +168,10 @@ $(function() {
         'font-size': 50 + 'px'
       });
 
+      intro_table.css({
+        'margin-left': 7.5 + '%',
+      });
+
       nav_left_items.css({
         'font-size': 2.5 + 'vh'
       });
@@ -261,8 +265,6 @@ $(function() {
   var fontBoundary = 350;
   $(window).scroll(function() {
     if ($(this).width() >= 767) {
-      //change this
-      var windowHeight = $( window ).height();
       var winScrollTop = $(window).scrollTop();
 
       //change font on scroll
