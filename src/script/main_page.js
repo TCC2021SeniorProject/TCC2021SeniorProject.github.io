@@ -48,6 +48,8 @@ $(function() {
   var second_sem_table_row = $('#second_semester_table td .table_row_type p');
   var outer_table = $('.outer_table');
   var sub_header = $('.sub_header');
+  var innter_table_content = $('#introduction_table p');
+  var intro_table = $('#introduction_table');
 
   var baseHeight = nav_bar.height();
   nav_bar.css({
@@ -55,8 +57,7 @@ $(function() {
   });
 
   var initialWidth = $( window ).width();
-  //when width is smaller than 774
-  if (initialWidth < 800) {
+  if (initialWidth < 800) {    
     nav_right_items.hide();
     nav_right_items.css({
       width: 0
@@ -91,16 +92,26 @@ $(function() {
     });
 
     outer_table.css({
-      'margin-left': 12 + '%',
+      'margin-left': 20 + '%',
     });
 
     sub_header.css({
-      'margin-left': 12 + '%',
+      'margin-left': 20 + '%',
     });
 
+    intro_table.css({
+      'margin-left': 7.5 + '%',
+    });
 
     intro_table_row.css({
+      'min-width' : 20 + 'px',
+      'width' : 20 + 'px',
       'font-size': 15 + 'px',
+    });
+
+    innter_table_content.css({
+      'font-size': 16 + 'px',
+      'margin-right' : 10 + 'px'
     });
 
     fisrt_sem_table_row.css({
@@ -109,6 +120,10 @@ $(function() {
 
     second_sem_table_row.css({
       'font-size': 15 + 'px',
+    });
+
+    nav_bar.css({
+      height: 70
     });
 
   } else {
@@ -130,6 +145,66 @@ $(function() {
 
     sub_header.css({
       'margin-left': 20 + '%',
+    });
+
+    var currentFontSize = calculateFontSize();//vw
+    var fontBoundary = 350;
+    $(window).scroll(function() {
+      //change this
+      var windowHeight = $( window ).height();
+      var winScrollTop = $(window).scrollTop();
+  
+      //change font on scroll
+      if (winScrollTop <= 5) { //set initial size
+        nav_right_items_a.css({
+          'font-size': currentFontSize + 'vw'
+        });
+  
+        nav_left_items.css({
+          'font-size': currentFontSize + 'vw'
+        });
+  
+      } else if (winScrollTop < fontBoundary && winScrollTop > 5) { //set dynamic size
+        //set font
+        var fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
+        nav_right_items_a.css({
+          'font-size': fontSizeValue + 'vmax'
+        });
+        nav_left_items.css({
+          'font-size': fontSizeValue + 'vmax'
+        });
+        
+        //set nav bar height size on scroll
+        var newHeight = calculateHeightToSet(winScrollTop, 220);
+        nav_bar.css({
+          height: newHeight
+        });
+        
+        //set opacity on scroll
+        opacityValue = calculateOpacityValue(winScrollTop, 220);
+        main_title.css({
+          opacity: opacityValue
+        });
+      } else { //set minimum size
+  
+        nav_bar.css({
+          height: 70
+        });
+  
+        main_title.css({
+          opacity: 0
+        });
+  
+        var fontSizeValue = getCurrentFontSize(fontBoundary, currentFontSize);
+        nav_right_items_a.css({
+          'font-size': 1.0 + 'vmax'
+        });
+  
+        nav_left_items.css({
+          'font-size': 1.0 + 'vmax'
+        });
+        
+      }
     });
   }
 
@@ -159,15 +234,15 @@ $(function() {
       });
 
       intro_table_row.css({
-        'font-size': 15 + 'px',
+        'font-size': 13 + 'px',
       });
 
       fisrt_sem_table_row.css({
-        'font-size': 15 + 'px',
+        'font-size': 13 + 'px',
       });
   
       second_sem_table_row.css({
-        'font-size': 15 + 'px',
+        'font-size': 13 + 'px',
       });
 
 
@@ -240,66 +315,6 @@ $(function() {
       });
     }
   
-  });
-
-  var currentFontSize = calculateFontSize();//vw
-  var fontBoundary = 350;
-  $(window).scroll(function() {
-    //change this
-    var windowHeight = $( window ).height();
-    var winScrollTop = $(window).scrollTop();
-
-    //change font on scroll
-    if (winScrollTop <= 5) { //set initial size
-      nav_right_items_a.css({
-        'font-size': currentFontSize + 'vw'
-      });
-
-      nav_left_items.css({
-        'font-size': currentFontSize + 'vw'
-      });
-
-    } else if (winScrollTop < fontBoundary && winScrollTop > 5) { //set dynamic size
-      //set font
-      var fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
-      nav_right_items_a.css({
-        'font-size': fontSizeValue + 'vmax'
-      });
-      nav_left_items.css({
-        'font-size': fontSizeValue + 'vmax'
-      });
-      
-      //set nav bar height size on scroll
-      var newHeight = calculateHeightToSet(winScrollTop, 220);
-      nav_bar.css({
-        height: newHeight
-      });
-      
-      //set opacity on scroll
-      opacityValue = calculateOpacityValue(winScrollTop, 220);
-      main_title.css({
-        opacity: opacityValue
-      });
-    } else { //set minimum size
-
-      nav_bar.css({
-        height: 70
-      });
-
-      main_title.css({
-        opacity: 0
-      });
-
-      var fontSizeValue = getCurrentFontSize(fontBoundary, currentFontSize);
-      nav_right_items_a.css({
-        'font-size': 1.0 + 'vmax'
-      });
-
-      nav_left_items.css({
-        'font-size': 1.0 + 'vmax'
-      });
-      
-    }
   });
 
   function calculateHeightToSet(currentScroll, scrollBoundary) {
