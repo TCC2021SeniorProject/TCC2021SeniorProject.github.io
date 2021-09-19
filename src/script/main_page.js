@@ -178,7 +178,6 @@ $(function() {
 
       intro_table_row.css({
         'font-size': 13 + 'px',
-        'margin-left': 7.5 + '%'
       });
 
       fisrt_sem_table_row.css({
@@ -264,7 +263,7 @@ $(function() {
   var currentFontSize = calculateFontSize();//vw
   var fontBoundary = 350;
   $(window).scroll(function() {
-    if ($(this).width() >= 767) {
+    if ($(this).width() >= 787) {
       var winScrollTop = $(window).scrollTop();
 
       //change font on scroll
