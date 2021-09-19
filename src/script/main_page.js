@@ -175,6 +175,7 @@ $(function() {
 
       intro_table_row.css({
         'font-size': 13 + 'px',
+        'margin-left': 7.5 + '%'
       });
 
       fisrt_sem_table_row.css({
