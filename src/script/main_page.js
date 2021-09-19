@@ -43,13 +43,13 @@ $(function() {
   var nav_left_items = $('#nav_bar_link p');
   var github_box = $('.github_box');
   var github_box_a = $('.github_box a');
-  var intro_table_row = $('#intro_div .table_row_type');
   var fisrt_sem_table_row = $('#first_semester_table td .table_row_type p');
   var second_sem_table_row = $('#second_semester_table td .table_row_type p');
   var outer_table = $('.outer_table');
   var sub_header = $('.sub_header');
-  var innter_table_content = $('#introduction_table p');
   var intro_table = $('#introduction_table');
+  var intro_table_content = $('#introduction_table p');
+  var intro_table_row = $('#intro_div .table_row_type');
 
   var baseHeight = nav_bar.height();
   nav_bar.css({
@@ -109,9 +109,8 @@ $(function() {
       'font-size': 15 + 'px',
     });
 
-    innter_table_content.css({
+    intro_table_content.css({
       'font-size': 16 + 'px',
-      'margin-right' : 10 + 'px'
     });
 
     fisrt_sem_table_row.css({
@@ -261,7 +260,7 @@ $(function() {
   var currentFontSize = calculateFontSize();//vw
   var fontBoundary = 350;
   $(window).scroll(function() {
-    if ($(this).width() > 767) {
+    if ($(this).width() >= 767) {
       //change this
       var windowHeight = $( window ).height();
       var winScrollTop = $(window).scrollTop();
