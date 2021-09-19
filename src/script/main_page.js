@@ -57,7 +57,7 @@ $(function() {
   });
 
   var initialWidth = $( window ).width();
-  if (initialWidth < 800) {    
+  if (initialWidth < 767) {    
     nav_right_items.hide();
     nav_right_items.css({
       width: 0
@@ -77,7 +77,7 @@ $(function() {
     nav_left_items.css({
       'margin-left': 0 + 'px',
       'width' : 100 + '%',
-      'font-size': 2.5 + 'vh'
+      'font-size': 20 + 'px'
     });
 
     github_box.css({
@@ -146,71 +146,11 @@ $(function() {
     sub_header.css({
       'margin-left': 20 + '%',
     });
-
-    var currentFontSize = calculateFontSize();//vw
-    var fontBoundary = 350;
-    $(window).scroll(function() {
-      //change this
-      var windowHeight = $( window ).height();
-      var winScrollTop = $(window).scrollTop();
-  
-      //change font on scroll
-      if (winScrollTop <= 5) { //set initial size
-        nav_right_items_a.css({
-          'font-size': currentFontSize + 'vw'
-        });
-  
-        nav_left_items.css({
-          'font-size': currentFontSize + 'vw'
-        });
-  
-      } else if (winScrollTop < fontBoundary && winScrollTop > 5) { //set dynamic size
-        //set font
-        var fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
-        nav_right_items_a.css({
-          'font-size': fontSizeValue + 'vmax'
-        });
-        nav_left_items.css({
-          'font-size': fontSizeValue + 'vmax'
-        });
-        
-        //set nav bar height size on scroll
-        var newHeight = calculateHeightToSet(winScrollTop, 220);
-        nav_bar.css({
-          height: newHeight
-        });
-        
-        //set opacity on scroll
-        opacityValue = calculateOpacityValue(winScrollTop, 220);
-        main_title.css({
-          opacity: opacityValue
-        });
-      } else { //set minimum size
-  
-        nav_bar.css({
-          height: 70
-        });
-  
-        main_title.css({
-          opacity: 0
-        });
-  
-        var fontSizeValue = getCurrentFontSize(fontBoundary, currentFontSize);
-        nav_right_items_a.css({
-          'font-size': 1.0 + 'vmax'
-        });
-  
-        nav_left_items.css({
-          'font-size': 1.0 + 'vmax'
-        });
-        
-      }
-    });
   }
 
   $(window).resize(function() {
 
-    if ($(this).width() < 800) {
+    if ($(this).width() < 767) {
   
       nav_right_items.hide();
 
@@ -317,6 +257,67 @@ $(function() {
   
   });
 
+  var currentFontSize = calculateFontSize();//vw
+  var fontBoundary = 350;
+  $(window).scroll(function() {
+    if ($(this).width() > 767) {
+      //change this
+      var windowHeight = $( window ).height();
+      var winScrollTop = $(window).scrollTop();
+
+      //change font on scroll
+      if (winScrollTop <= 5) { //set initial size
+        nav_right_items_a.css({
+          'font-size': currentFontSize + 'vw'
+        });
+
+        nav_left_items.css({
+          'font-size': currentFontSize + 'vw'
+        });
+
+      } else if (winScrollTop < fontBoundary && winScrollTop > 5) { //set dynamic size
+        //set font
+        var fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
+        nav_right_items_a.css({
+          'font-size': fontSizeValue + 'vmax'
+        });
+        nav_left_items.css({
+          'font-size': fontSizeValue + 'vmax'
+        });
+        
+        //set nav bar height size on scroll
+        var newHeight = calculateHeightToSet(winScrollTop, 220);
+        nav_bar.css({
+          height: newHeight
+        });
+        
+        //set opacity on scroll
+        opacityValue = calculateOpacityValue(winScrollTop, 220);
+        main_title.css({
+          opacity: opacityValue
+        });
+      } else { //set minimum size
+
+        nav_bar.css({
+          height: 70
+        });
+
+        main_title.css({
+          opacity: 0
+        });
+
+        var fontSizeValue = getCurrentFontSize(fontBoundary, currentFontSize);
+        nav_right_items_a.css({
+          'font-size': 1.0 + 'vmax'
+        });
+
+        nav_left_items.css({
+          'font-size': 1.0 + 'vmax'
+        });
+      }
+    }
+  });
+
   function calculateHeightToSet(currentScroll, scrollBoundary) {
     var finalHeight = (scrollBoundary) - (currentScroll) * (9 / 10);
     return finalHeight;
@@ -334,7 +335,6 @@ $(function() {
     var variationRnage = 0.5 / (100/($(window).width()));
     //all in px
     var finalValue = ((1 / currentScroll) * variationRnage) + (currentFontSize * 2 / 3);
-    console.log("In vm: " + finalValue);
     return finalValue;
   }
 
