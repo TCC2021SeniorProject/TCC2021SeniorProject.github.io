@@ -9,11 +9,24 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="./src/css/main_page.css">
-    <link rel="stylesheet" href="./src/img/background/" type="img"/>
+    <!-- 
+      use this on css
+      font-family: 'Anton', sans-serif;
+      font-family: 'Bebas Neue', cursive;
+      font-family: 'Fjalla One', sans-serif;
+      font-family: 'Roboto', sans-serif;
+    -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
     <script type="text/javascript" src="./src/script/main_page.js"> </script>
   </head>
+  <!-- Navigation bar -->
   <header id="top">
-    <nav class="nav_bar fixed_top" id="nav_bar">
+    <nav id="nav_bar">
       <a id="nav_bar_link" href="./index.html">
         <p class="nav_title">Florida Tech Senior Project</p>
       </a>
@@ -41,239 +54,423 @@
       </div>
     </nav>
   </header>
-
   <body>
+    <!-- Github hovering button-->
     <aside class="github_box">
       <a href="https://github.com/TCC2021SeniorProject" class="icon" title="Github">
-        Go to Github
+        Github Link
         <img src="./src/img/icons/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png" alt="" class="image">
       </a>
     </aside>
-
-    <hr class="line"> </hr>
-
-    <section>
+    <!-- First section-->
+    <section id="main_section">
       <div class="content_section" id="intro_div">
-        <table class="outer_table" id="introduction_table">
-          <tbody>
-
-            <tr> <!--Second row-->
-              <td class="table_row_type"> <!--First main column-->
-                  Team Members
-              </td>
-              <td>
-                <table class="innter_table">
-                  <tr> <!--Second main column-->
-                    <td> <!--First sub column-->
-                      <i class="fa fa-user"></i>
-                      <p>
-                        Sung-Jun(Tony)Baek
-                      </p>
-                    </td>
-                    <td> <!--First sub column-->
-                      <i class="fa fa-user"></i>
-                      <p>
-                        Caelan Shoop
-                      </p>
-                    </td>
-                    <td> <!--First sub column-->
-                      <i class="fa fa-user"></i>
-                       <p>
-                        Cameron Wright
-                      </p>
-                    </td>
-                  </tr>
-    
-                  <tr> <!--Thrid main column-->
-                    <td class="email_address"> <!--Second sub column-->
-                      <p>
-                        sbaek2015@my.fit.edu
-                      </p>
-                    </td>
-                    <td class="email_address"> <!--Second sub column-->
-                      <p>
-                        cshoop2018@my.fit.edu
-                      </p>
-                    </td>
-                    <td class="email_address"> <!--Second sub column-->
-                      <p>
-                        cameron2018@my.fit.edu
-                      </p>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <tr> <!--Thrid row-->
-              <td class="table_row_type"> <!--First column-->
-                Faculty Sponsor
-              </td>
-              <td>
-                <table class="innter_table">
-                  <td> <!--Second column-->
-                    <i class="fa fa-user"></i>
-                    <p>Dr. Siddhartha Bhattacharyya</p>
-                  </td>
-                  <td class="email_address"> <!--Second column-->
-                    <p>sbhattacharyya@fit.edu</p>
-                  </td>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="box_repeater" id="intro_box">
+          <div class="container_wrapper" id="sponser_box">
+            <div class="box_margin">
+              <span class="span_box_icon" id="sponser_icon">
+                <span class="span_icon">
+                  <img src="./src/img/icons/professor-with-clipboard.svg" alt="advisor" style="width: 50px;">
+                </span>
+              </span>
+              <h8 class="team_member_header" id="sponsor_label">
+                Sponsor advisor
+              </h8>
+              <h6 class="team_member_header" id="sponsor_name">
+                Dr. Siddhartha Bhattacharyya
+              </h6>
+              <p class="email_address_p">
+                sbhattacharyya@fit.edu
+              </p>
+            </div>
+          </div>
+          <div class="container_wrapper" id="first_member_box">
+            <div class="box_margin">
+              <span class="span_icon">
+                <img src="./src/img/icons/developer.svg" alt="developer" style="width: 45px;">
+              </span>
+              <h8 class="team_member_header">
+                Student
+              </h8>
+              <h6 class="team_member_header">
+                Sung-Jun(Tony)Baek
+              </h6>
+              <p class="email_address_p">
+                sbaek2015@my.fit.edu
+              </p>
+            </div>
+          </div>
+          <div class="container_wrapper" id="second_member_box">
+            <div class="box_margin">
+              <span class="span_icon">
+                <img src="./src/img/icons/developer.svg" alt="developer" style="width: 45px;">
+              </span>
+              <h8 class="team_member_header">
+                Student
+              </h8>
+              <h6 class="team_member_header">
+                Caelan Shoop
+              </h6>
+              <p class="email_address_p">
+                cshoop2018@my.fit.edu
+              </p>
+            </div>
+          </div>
+          <div class="container_wrapper" id="third_member_box">
+            <div class="box_margin">
+              <span class="span_icon">
+                <img src="./src/img/icons/developer.svg" alt="developer" style="width: 45px;">
+              </span>
+              <h8 class="team_member_header">
+                Student
+              </h8>
+              <h6 class="team_member_header">
+                Cameron Wright
+              </h6>
+              <p class="email_address_p">
+                cameron2018@my.fit.edu
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-
+      <!-- Line -->
       <hr class="line" id="first_semester_div"> </hr>
-
-      <div class="content_section">
-        <aside class="content_section_aside">
+      <!-- Semester content -->
+      <div class="semester_section">
+        <div class="sub_header_div">
           <h2 class="sub_header" id="first_sub_header"> First Semester </h2>
-          <table class="outer_table" id="first_semester_table">
-            <tbody>
-              <tr>
-                <td class="table_row_type">
-                  <p class="done">Plan (Sep 8)</p>
-                </td>
-                <td class="content">
-                  <a class="done" href="https://drive.google.com/file/d/1UHxCx8l3Wgu_6PQxfjx6K0d7gkP5ybov/view?usp=sharing">
-                    <p class="done">Plan</p>
-                  </a>
-                  <a class="done" href="https://docs.google.com/presentation/d/10Lj9Qc-gxBvx7y5DaC0401KZ35yUORIBJxsiAyW43Vc/edit?usp=sharing">
-                   <p class="done">Presentation</p>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table_row_type">
-                  <p class="in_progress">Milestone 1 (Oct 4)</p>
-                </td>
-                <td class="content">
-                  <a href="">
-                    <p class="in_progress"> Requirement </p>
-                  </a>
-                  <a href="">
-                    <p class="in_progress"> Design </p>
-                  </a>
-                  <a href="">
-                    <p class="in_progress"> Test </p>
-                  </a>
-                  <a href="">
-                    <p class="in_progress"> Presentation </p>
-                  </a>
-                  <a href="">
-                    <p class="in_progress"> Progress Evaluation </p>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table_row_type">
-                  <p>Milestone 2 (Nov 1)</p>
-                </td>
-                <td class="content">
-                  <a href="">
-                    <p>Presentation</p>
-                  </a>
-                  <a href="">
-                    <p>Progress Evaluation</p> 
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table_row_type">
-                  <p>Milestone 3 (Nov 29)</p> 
-                </td>
-                <td class="content">
-                  <a href="">
-                    <p>Presentation</p> 
-                  </a>
-                  <a href="">
-                    <p>Progress Evaluation</p> 
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </aside>
+        </div>
+        <div>
+          <div class="semester_box_repeater">
+            <!-- First title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line" > </div>
+              <!-- content elements! -->
+              <div class="box_subject"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                    <img src="./src/img/icons/supervised_user_circle_black_24dp.svg" alt="developer" style="width: 45px;">
+                  </span>
+                  <h5 class="subject_and_time">
+                    Plan (Sep 8)
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item">
+                      <a href="https://drive.google.com/file/d/1UHxCx8l3Wgu_6PQxfjx6K0d7gkP5ybov/view?usp=sharing">
+                        Plan
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item">
+                      <a href="https://docs.google.com/presentation/d/10Lj9Qc-gxBvx7y5DaC0401KZ35yUORIBJxsiAyW43Vc/edit?usp=sharing">
+                        Presentation
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+            <!-- Second title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject" id="milestone1_box"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                    <img src="./src/img/icons/map.svg" alt="developer" style="width: 45px;">
+                  </span>
+                  <h5 class="subject_and_time">
+                    Milestone 1 (Oct 4)
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item in_progress">
+                      <a href="" >
+                        Requirement
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item in_progress">
+                      <a class="" href="">
+                        Design
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item in_progress">
+                      <a class="" href="">
+                        Test
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+            <!-- Second title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                    
+                  </span>
+                  <h5 class="subject_and_time">
+                    
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item in_progress">
+                      <a href="">
+                        Presentation
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item in_progress">
+                      <a href="">
+                        Progress Evaluation
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+            <!-- Third title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                    <img src="./src/img/icons/map.svg" alt="developer" style="width: 45px;">
+                  </span>
+                  <h5 class="subject_and_time">
+                    Milestone 2 (Nov 1)
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Presentation
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Evaluation
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+            <!-- Fourth title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                    <img src="./src/img/icons/map.svg" alt="developer" style="width: 45px;">
+                  </span>
+                  <h5 class="subject_and_time">
+                    Milestone 3 (Nov 29)
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Presentation
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Evaluation
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+          </div>
+        </div>
       </div>
 
       <hr class="line" id="second_semester_div"> </hr>
 
-      <div class="content_section">
-        <aside class="content_section_aside">
-          <h2 class="sub_header" id="second_sub_header"> Second Semester </h2>
-          <table class="outer_table" id="second_semester_table">
-            <tbody>
-              <tr>
-                <td class="table_row_type">
-                  <p>Plan (Jan ?)</p>
-                </td>
-                <td class="content">
-                  <a href="">
-                    <p>Plan</p>
-                  </a>
-                  <a href="">
-                    <p>Presentation</p>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table_row_type">
-                  <p>Milestone 4 (Feb)</p>
-                </td>
-                <td class="content">
-                  <a href="">
-                    <p>Plan</p>
-                  </a>
-                  <a href="">
-                    <p>Presentation</p>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table_row_type">
-                  <p>Milestone 5</p>
-                </td>
-                <td class="content">
-                  <a href="">
-                    <p>Poster</p>
-                  </a>
-                  <a href="">
-                    <p>e-book page</p>
-                  </a>
-                  <a href="">
-                    <p>Presentation</p>
-                  </a>
-                  <a href="">
-                    <p>Progress Evaluation</p>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="table_row_type">
-                  <p>Milestone 6 (Apr)</p>
-                </td>
-                <td class="content">
-                  <a href="">
-                    <p>User and/or Developer Manual</p>
-                 </a>
-                  <a href="">
-                    <p>Demo Video</p>
-                  </a>
-                  <a href="">
-                    <p>Presentation</p>
-                  </a>
-                  <a href="">
-                    <p>Progress Evaluation </p>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-      </aside>
+      <!-- semester content -->
+      <div class="semester_section">
+        <div class="sub_header_div">
+          <h2 class="sub_header" id="first_sub_header"> Second Semester </h2>
+        </div>
+        <div>
+          <div class="semester_box_repeater">
+            <!-- First title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                    <img src="./src/img/icons/supervised_user_circle_black_24dp.svg" alt="developer" style="width: 45px;">
+                  </span>
+                  <h5 class="subject_and_time">
+                    Plan (Jan ?)
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Plan
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Presentation
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+            <!-- Second title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                    <img src="./src/img/icons/map.svg" alt="developer" style="width: 45px;">
+                  </span>
+                  <h5 class="subject_and_time">
+                    Milestone 4 (Feb ?)
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Plan
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Presentation
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+            <!-- Third title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject" id="milestone5_box"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                    <img src="./src/img/icons/map.svg" alt="developer" style="width: 45px;">
+                  </span>
+                  <h5 class="subject_and_time">
+                    Milestone 5 (Mar ?)
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Poster
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        e-book manual
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+            <!-- First Sub Third title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                  </span>
+                  <h5 class="subject_and_time">
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Presentation
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Progress Evaluation
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+            <!-- Fourth title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject" id="milestone6_box"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                    <img src="./src/img/icons/map.svg" alt="developer" style="width: 45px;">
+                  </span>
+                  <h5 class="subject_and_time">
+                    Milestone 6 (Apr ?)
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Developer manual
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Demo Video
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+            <!-- First Sub Fourth title -->
+            <div class="row_box_div">
+              <div class="box_vertical_line"> </div>
+              <!-- content elements! -->
+              <div class="box_subject"> 
+                <ul class="ul_first_semester_plan_list">
+                  <span class="subject_span_icon">
+                  </span>
+                  <h5 class="subject_and_time">
+                  </h5>
+                  <div class="div_li_first_semester_plan_list"> 
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Presentation
+                      </a>
+                    </div>
+                    <div class="div_li_first_semester_plan_list_item not_prepared">
+                      <a href="">
+                        Prgress Evaluation
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <!-- end of content elements! -->
+            </div>
+          </div>
+        </div>
       </div>
+
     </section>
+    <!-- Second section-->
     <footer>
       <div>
         <div>
@@ -295,7 +492,7 @@
         </div>
         <div class="footer_legal">
           <p>
-            © 2021 Model Based IoT.<br><br> Website hosted by Gibhub
+            2021 Model Based IoT<br><br> Website hosted by Github<br><br>Designed by Tony Baek
             <a>
 
             </a>

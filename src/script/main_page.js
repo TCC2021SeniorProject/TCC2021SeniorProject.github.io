@@ -1,4 +1,4 @@
-//hover function
+//Nav buttons hover function
 $(function() {
   //left element of navigation
   $('#nav_bar_link').hover(function() {
@@ -35,32 +35,73 @@ $(function() {
   });
 });
 
+//anything that goes below 1050px, will be considered as mobile
+const MINIMUM_WINDOW_WIDTH = 1050;
+
+var max_window_trigger;
+
+//Set initial webpage setting on load
 $(function() {
+  var element = document.querySelector('body');
+  var initial_style = window.getComputedStyle(element);
+
+  function copyNodeStyle(sourceNode, targetNode) {
+    const computedStyle = window.getComputedStyle(sourceNode);
+    Array.from(computedStyle).forEach(key => targetNode.style.setProperty(key, computedStyle.getPropertyValue(key), computedStyle.getPropertyPriority(key)))
+  }
+  
+
+  //Github logo
+  var github_button = $('.github_box a');
+  var github_image = $('.github_box img');
+
+  //top navigation
   var nav_bar = $('#nav_bar');
+  var nav_left_items = $('#nav_bar_link p');
   var main_title = $('#nav_head_title');
   var nav_right_items = $('.right_nav_items');
   var nav_right_items_a = $('.right_nav_items a');
-  var nav_left_items = $('#nav_bar_link p');
-  var github_box = $('.github_box');
-  var github_box_a = $('.github_box a');
-  var fisrt_sem_table_row = $('#first_semester_table td .table_row_type p');
-  var second_sem_table_row = $('#second_semester_table td .table_row_type p');
-  var outer_table = $('.outer_table');
-  var sub_header = $('.sub_header');
-  var intro_table = $('#introduction_table');
-  var intro_table_content = $('#introduction_table p');
-  var intro_table_row = $('#intro_div .table_row_type');
 
-  var baseHeight = nav_bar.height();
-  nav_bar.css({
-    height: baseHeight,
-  });
-
+  //intro cards
+  var box_repeater = $('.box_repeater');
+  var box_container_wrap = $('.container_wrapper');
+  var box_email_text = $('.email_address_p');
+  var box_icons = $('.span_icon img');
   var initialWidth = $( window ).width();
-  if (initialWidth < 777) {    
-    nav_right_items.hide();
-    nav_right_items.css({
-      width: 0
+
+  //semester boxes
+  var main_section = $('#main_section');
+  var semester_section = $('.semester_section');
+  var row_box_div = $('.row_box_div');
+  var subject_span_icon = $('.subject_span_icon');
+  var subject_and_time = $('.subject_and_time');
+  var ul_first_semester_plan_list = $('.ul_first_semester_plan_list');
+  var semester_box_repeater = $('.semester_box_repeater');
+  var box_button_text = $('.div_li_first_semester_plan_list_item a');
+  var footer_legal = $('.footer_legal');
+
+  function miniSize() {
+    github_button.css({
+      'left': 0 + 'px',
+      'top': 85 + '%',
+      'bottom': 10 + '%',
+      'font-size': 12 + 'px',
+      'padding': 0,
+      'transform': 'rotate(270deg)'
+    });
+
+    github_image.css({
+      'width' : 25 + 'px',
+    });
+
+    nav_bar.css({
+      height: 70
+    });
+
+    nav_left_items.css({
+      'margin-left': 0 + 'px',
+      'width' : 100 + '%',
+      'font-size': 15 + 'px'
     });
 
     main_title.css({
@@ -68,212 +109,129 @@ $(function() {
       'padding-bottom': 10 + 'px',
       'margin-top': 0 + 'px',
       'margin-bottom': 0 + 'px',
-      'margin_right' : 15 + 'px',
+      'padding-right' : 15 + '%',
       'text-align' : 'right',
-      'width' : 30 + '%',
-      'font-size': 50 + 'px'
-    });
-
-    nav_left_items.css({
-      'margin-left': 0 + 'px',
       'width' : 100 + '%',
-      'font-size': 20 + 'px'
     });
 
-    github_box.css({
-      'left': -6 + '%',
+    nav_right_items.hide();
+    nav_right_items.css({
+      width: 0
     });
 
-    github_box_a.css({
+
+    main_section.css({
+      'width': 80 + '%',
+      'margin': 0 + '%',
+    });
+
+    box_repeater.css({
+      'grid-template-columns' : 'repeat(1, calc(60%)',
+      'margin-left': 14 + '%',
+    });
+
+    box_container_wrap.css({
+      'min-width': 'none',
+      'width': 80 + '%',
+    });
+
+    box_email_text.css({
+      'font-size': 10 + 'px',
+    });
+
+    box_icons.css({
+      'width' : 180 + 'px',
+    });
+
+    semester_section.css({
+      'width': 70 + '%',
+      'margin-left': 0 + '%',
+    });
+
+    row_box_div.css({
+      'height': 'auto',
+    });
+
+    subject_span_icon.css({
+      'width': 100 + '%',
+      'margin-left': 35 + '%',
+    });
+
+    subject_and_time.css({
+      'width': 100 + '%',
       'text-align' : 'center',
-      'margin-top': 15 + 'px',
-      'font-size': 15 + 'px',
-      'padding': 4 + 'px'
     });
 
-    outer_table.css({
-      'margin-left': 20 + '%',
+    ul_first_semester_plan_list.css({
+      'height' : 'auto',
+      'display' : "block",
     });
 
-    sub_header.css({
-      'margin-left': 20 + '%',
+    semester_box_repeater.css({
+      'grid-template-columns': 'repeat(2)'
     });
 
-    intro_table.css({
-      'margin-left': 7.5 + '%',
+    box_button_text.css({
+      'font-size': 12 + 'px'
     });
 
-    intro_table_row.css({
-      'min-width' : 20 + 'px',
-      'width' : 20 + 'px',
-      'font-size': 15 + 'px',
+    footer_legal.css({
+      'width': 100 + '%',
+      'padding-left' : 20 + '%',
+      'text-align' : 'left',
     });
+  }
 
-    intro_table_content.css({
-      'font-size': 16 + 'px',
-    });
-
-    fisrt_sem_table_row.css({
-      'font-size': 15 + 'px',
-    });
-
-    second_sem_table_row.css({
-      'font-size': 15 + 'px',
-    });
-
-    nav_bar.css({
-      height: 70
-    });
-
-  } else {
-    intro_table_row.css({
-      'font-size': 20 + 'px',
-    });
-
-    fisrt_sem_table_row.css({
-      'font-size': 20 + 'px',
-    });
-
-    second_sem_table_row.css({
-      'font-size': 20 + 'px',
-    });
-
-    outer_table.css({
-      'margin-left': 20 + '%',
-    });
-
-    sub_header.css({
-      'margin-left': 20 + '%',
-    });
+  /*
+   *          Window size function
+   */
+  //when opened window is smaller than the optimal size
+  if (initialWidth < MINIMUM_WINDOW_WIDTH) {   
+    max_window_trigger = false; 
+    miniSize();
+  } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH) {
+    max_window_trigger = true; 
   }
 
   $(window).resize(function() {
 
-    if ($(this).width() < 767) {
-  
-      nav_right_items.hide();
-
-      nav_right_items.css({
-        width: 0
-      });
-
-      main_title.css({
-        'padding-top': 10 + 'px',
-        'padding-bottom': 10 + 'px',
-        'margin-top': 0 + 'px',
-        'margin-bottom': 0 + 'px',
-        'margin_right' : 15 + 'px',
-        'text-align' : 'right',
-        'width' : 30 + '%',
-        'font-size': 50 + 'px'
-      });
-
-      intro_table.css({
-        'margin-left': 7.5 + '%',
-      });
-
-      nav_left_items.css({
-        'font-size': 2.5 + 'vh'
-      });
-
-      intro_table_row.css({
-        'font-size': 13 + 'px',
-      });
-
-      fisrt_sem_table_row.css({
-        'font-size': 13 + 'px',
-      });
-  
-      second_sem_table_row.css({
-        'font-size': 13 + 'px',
-      });
-
-
-      outer_table.css({
-        'margin-left': 13 + '%',
-      });
-
-      sub_header.css({
-        'margin-left': 13 + '%',
-      });
-
-      github_box.css({
-        'left': -3 + '%',
-      });
-
-      github_box_a.css({
-        'text-align' : 'center',
-        'margin-top': 15 + 'px',
-        'font-size': 15 + 'px',
-        'padding': 4 + 'px'
-      });
-  
-    } else {
-      nav_right_items.show();
-  
-      nav_right_items.css({
-        width: 40 + "vw"
-      });
-
-      main_title.css({
-        width: 60 + "%"
-      });
-
-      nav_left_items.css({
-        'font-size': 1.4 + 'vmax'
-      });
-
-      intro_table_row.css({
-        'font-size': 20 + 'px',
-      });
-
-      fisrt_sem_table_row.css({
-        'font-size': 20 + 'px',
-      });
-  
-      second_sem_table_row.css({
-        'font-size': 20 + 'px',
-      });
-
-      outer_table.css({
-        'margin-left': 20 + '%',
-      });
-
-      sub_header.css({
-        'margin-left': 20 + '%',
-      });
-
-      github_box.css({
-        'left': -1 + '%',
-      });
-
-      github_box_a.css({
-        'text-align' : 'center',
-        'padding-top': 10 + 'px',
-        'padding-bottom': 15 + 'px',
-        'padding-left': 20 + 'px',
-        'padding-right': 15 + 'px',
-        'font-size': 25 + 'px',
-        'padding': 10 + 'px'
-      });
+    if ($(this).width() < MINIMUM_WINDOW_WIDTH && max_window_trigger) {
+      max_window_trigger = false;
+      miniSize();
+      console.log("size change");
+    } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH && !max_window_trigger) {
+      max_window_trigger = true;
+      location.reload(true);
+      console.log("size change");
     }
-  
   });
 
+  /*
+   *            Scroll function
+   */
   var currentFontSize = calculateFontSize();//vw
   var fontBoundary = 350;
   $(window).scroll(function() {
     if ($(this).width() >= 787) {
       var winScrollTop = $(window).scrollTop();
-
+      console.log(winScrollTop);
       //change font on scroll
-      if (winScrollTop <= 5) { //set initial size
+      if (winScrollTop <= 15) { //set initial size
+
         nav_right_items_a.css({
           'font-size': currentFontSize + 'vw'
         });
 
         nav_left_items.css({
           'font-size': currentFontSize + 'vw'
+        });
+
+        nav_bar.css({
+          height: 160
+        });
+
+        main_title.css({
+          opacity: 1
         });
 
       } else if (winScrollTop < fontBoundary && winScrollTop > 5) { //set dynamic size
@@ -287,7 +245,7 @@ $(function() {
         });
         
         //set nav bar height size on scroll
-        var newHeight = calculateHeightToSet(winScrollTop, 220);
+        var newHeight = calculateHeightToSet(winScrollTop, 160);
         nav_bar.css({
           height: newHeight
         });
@@ -300,7 +258,7 @@ $(function() {
       } else { //set minimum size
 
         nav_bar.css({
-          height: 70
+          height: 60
         });
 
         main_title.css({
