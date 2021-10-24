@@ -36,7 +36,7 @@ $(function() {
 });
 
 //anything that goes below 1050px, will be considered as mobile
-const MINIMUM_WINDOW_WIDTH = 1050;
+const MINIMUM_WINDOW_WIDTH = 800;
 
 var max_window_trigger;
 
@@ -49,7 +49,12 @@ $(function() {
     const computedStyle = window.getComputedStyle(sourceNode);
     Array.from(computedStyle).forEach(key => targetNode.style.setProperty(key, computedStyle.getPropertyValue(key), computedStyle.getPropertyPriority(key)))
   }
-  
+
+  //viewpoint width
+  var window_w = $( window ).width();
+
+  //body
+  var body = $('body');
 
   //Github logo
   var github_button = $('.github_box a');
@@ -57,12 +62,16 @@ $(function() {
 
   //top navigation
   var nav_bar = $('#nav_bar');
+  var nav_icon = $('#nav_bar_icon img');
+  var nav_bar_div = $('nav_bar_link');
   var nav_left_items = $('#nav_bar_link p');
   var main_title = $('#nav_head_title');
+  var main_title_h = $('#nav_head_title h1');
   var nav_right_items = $('.right_nav_items');
   var nav_right_items_a = $('.right_nav_items a');
 
   //intro cards
+  var intro_div = $('#intro_div')
   var box_repeater = $('.box_repeater');
   var box_container_wrap = $('.container_wrapper');
   var box_email_text = $('.email_address_p');
@@ -74,13 +83,20 @@ $(function() {
   var semester_section = $('.semester_section');
   var row_box_div = $('.row_box_div');
   var subject_span_icon = $('.subject_span_icon');
+  var sub_header_div = $('.sub_header_div');
   var subject_and_time = $('.subject_and_time');
   var ul_first_semester_plan_list = $('.ul_first_semester_plan_list');
   var semester_box_repeater = $('.semester_box_repeater');
   var box_button_text = $('.div_li_first_semester_plan_list_item a');
   var footer_legal = $('.footer_legal');
+  
 
   function miniSize() {
+
+    body.css({
+      'width' : window_w,
+    });
+
     github_button.css({
       'left': 0 + 'px',
       'top': 85 + '%',
@@ -95,23 +111,41 @@ $(function() {
     });
 
     nav_bar.css({
-      height: 70
+      'height': 75,
+      'width' : window_w,
+    });
+
+    nav_icon.css({
+      'margin-left': 5 + 'px',
+      'width': 50 + 'px'
+    });
+
+    nav_bar_div.css({
+      'padding-top' : 5 + 'px',
+      'padding-left' : 0,
+      'margin-left': 0 + 'px',
+      'width' : 100 + "%",
+      'font-size': 17 + 'px'
     });
 
     nav_left_items.css({
+      'padding-top' : 5 + 'px',
+      'font-size': 17 + 'px',
       'margin-left': 0 + 'px',
-      'width' : 100 + '%',
-      'font-size': 15 + 'px'
     });
 
     main_title.css({
       'padding-top': 10 + 'px',
       'padding-bottom': 10 + 'px',
+      'padding-right' : 0 + '%',
       'margin-top': 0 + 'px',
       'margin-bottom': 0 + 'px',
-      'padding-right' : 15 + '%',
-      'text-align' : 'right',
-      'width' : 100 + '%',
+      'text-align' : 'left',
+      'width' : 30 + '%',
+    });
+
+    main_title_h.css({
+      'font-size': 19 + 'px'
     });
 
     nav_right_items.hide();
@@ -120,41 +154,53 @@ $(function() {
     });
 
 
+    intro_div.css({
+      'margin-top': 50 + 'px',
+    });
+
     main_section.css({
-      'width': 80 + '%',
+      'width': window_w,
       'margin': 0 + '%',
     });
 
     box_repeater.css({
-      'grid-template-columns' : 'repeat(1, calc(60%)',
-      'margin-left': 14 + '%',
+      'grid-template-columns' : 'repeat(1, calc(100%)',
+      'width' : window_w,
+      'margin-left': 22 + '%',
     });
 
     box_container_wrap.css({
       'min-width': 'none',
-      'width': 80 + '%',
+      'width': 60 + '%',
+      'height' : 210 + 'px'
     });
 
     box_email_text.css({
-      'font-size': 10 + 'px',
+      'font-size': 15 + 'px',
     });
 
+    //Introduction icon
     box_icons.css({
-      'width' : 180 + 'px',
+      'width' : 50 + 'px',
+    });
+
+    //Milestone icon
+    subject_span_icon.css({
+      'width': 50 + '%',
+      'margin-left': 35 + '%',
+    });
+
+    sub_header_div.css({
+      'width': window_w,
+      'margin-left': 1.5 + '%',
     });
 
     semester_section.css({
-      'width': 70 + '%',
-      'margin-left': 0 + '%',
+      'width': window_w,
     });
 
     row_box_div.css({
       'height': 'auto',
-    });
-
-    subject_span_icon.css({
-      'width': 100 + '%',
-      'margin-left': 35 + '%',
     });
 
     subject_and_time.css({
@@ -168,7 +214,8 @@ $(function() {
     });
 
     semester_box_repeater.css({
-      'grid-template-columns': 'repeat(2)'
+      'grid-template-columns': 'repeat(2)',
+      'margin-left': 17 + '%'
     });
 
     box_button_text.css({
@@ -176,9 +223,8 @@ $(function() {
     });
 
     footer_legal.css({
-      'width': 100 + '%',
-      'padding-left' : 20 + '%',
-      'text-align' : 'left',
+      'width': window_w,
+      'text-align' : 'center',
     });
   }
 
@@ -194,14 +240,16 @@ $(function() {
   }
 
   $(window).resize(function() {
-
+    //reload attritubes on resize
+    setTimeout(function(){
+      window.location.reload();
+    },1);
     if ($(this).width() < MINIMUM_WINDOW_WIDTH && max_window_trigger) {
       max_window_trigger = false;
       miniSize();
       console.log("size change");
     } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH && !max_window_trigger) {
       max_window_trigger = true;
-      location.reload(true);
       console.log("size change");
     }
   });
@@ -226,6 +274,10 @@ $(function() {
           'font-size': currentFontSize + 'vw'
         });
 
+        nav_icon.css({
+          'width': 80 + 'px'
+        });
+
         nav_bar.css({
           height: 160
         });
@@ -244,6 +296,10 @@ $(function() {
           'font-size': fontSizeValue + 'vmax'
         });
         
+        nav_icon.css({
+          'width': 50 * fontSizeValue + 'px'
+        });
+
         //set nav bar height size on scroll
         var newHeight = calculateHeightToSet(winScrollTop, 160);
         nav_bar.css({
