@@ -94,7 +94,13 @@ table {
   /* left side of the nav */
   #nav_bar_icon img {
     margin-left: 25px;
-    width: 80px;
+    width: 70px;
+    transition-duration: 2s;
+  }
+
+  #nav_bar_icon img:hover {
+    transform: rotate(-360deg);
+    transition-duration: 1.5s;
   }
 
   #nav_bar_link {

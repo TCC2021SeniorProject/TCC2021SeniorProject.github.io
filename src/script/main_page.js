@@ -241,16 +241,16 @@ $(function() {
 
   $(window).resize(function() {
     //reload attritubes on resize
-    setTimeout(function(){
-      window.location.reload();
-    },1);
     if ($(this).width() < MINIMUM_WINDOW_WIDTH && max_window_trigger) {
       max_window_trigger = false;
       miniSize();
       console.log("size change");
-    } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH && !max_window_trigger) {
+    } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH) {
       max_window_trigger = true;
       console.log("size change");
+      setTimeout(function(){
+        window.location.reload();
+      },1);
     }
   });
 
@@ -275,7 +275,7 @@ $(function() {
         });
 
         nav_icon.css({
-          'width': 80 + 'px'
+          'width': 70 + 'px'
         });
 
         nav_bar.css({
