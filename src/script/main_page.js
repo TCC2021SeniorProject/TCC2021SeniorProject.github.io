@@ -51,7 +51,8 @@ $(function() {
   }
 
   //viewpoint width
-  var window_w = $( window ).width();
+  var window_w = 100 + "%";
+  var mobile_w =  window.innerWidth;
 
   //body
   var body = $('body');
@@ -94,7 +95,7 @@ $(function() {
   function miniSize() {
 
     body.css({
-      'width' : window_w,
+      'width' : 100 + "%",
     });
 
     github_button.css({
@@ -103,7 +104,8 @@ $(function() {
       'bottom': 10 + '%',
       'font-size': 12 + 'px',
       'padding': 0,
-      'transform': 'rotate(270deg)'
+      'transform': 'rotate(270deg)',
+      'transition-delay' : 0.2 + 's',
     });
 
     github_image.css({
@@ -112,7 +114,7 @@ $(function() {
 
     nav_bar.css({
       'height': 75,
-      'width' : window_w,
+      'width' : mobile_w,
     });
 
     nav_icon.css({
@@ -159,13 +161,13 @@ $(function() {
     });
 
     main_section.css({
-      'width': window_w,
+      'width': mobile_w,
       'margin': 0 + '%',
     });
 
     box_repeater.css({
       'grid-template-columns' : 'repeat(1, calc(100%)',
-      'width' : window_w,
+      'width' : mobile_w,
       'margin-left': 22 + '%',
     });
 
@@ -191,12 +193,12 @@ $(function() {
     });
 
     sub_header_div.css({
-      'width': window_w,
+      'width': mobile_w,
       'margin-left': 1.5 + '%',
     });
 
     semester_section.css({
-      'width': window_w,
+      'width': mobile_w,
     });
 
     row_box_div.css({
@@ -223,7 +225,7 @@ $(function() {
     });
 
     footer_legal.css({
-      'width': window_w,
+      'width': mobile_w,
       'text-align' : 'center',
     });
   }
@@ -243,11 +245,13 @@ $(function() {
     //reload attritubes on resize
     if ($(this).width() < MINIMUM_WINDOW_WIDTH && max_window_trigger) {
       max_window_trigger = false;
+      max_window_trigger = true;
+      setTimeout(function(){
+        window.location.reload();
+      },1);
       miniSize();
-      console.log("size change");
     } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH) {
       max_window_trigger = true;
-      console.log("size change");
       setTimeout(function(){
         window.location.reload();
       },1);
@@ -263,7 +267,7 @@ $(function() {
     if ($(this).width() >= 787) {
       var winScrollTop = $(window).scrollTop();
       console.log(winScrollTop);
-      //change font on scroll
+      //Top of the page
       if (winScrollTop <= 15) { //set initial size
 
         nav_right_items_a.css({
@@ -312,6 +316,10 @@ $(function() {
           opacity: opacityValue
         });
       } else { //set minimum size
+
+        nav_icon.css({
+          'width': 50 + 'px'
+        });
 
         nav_bar.css({
           height: 60
