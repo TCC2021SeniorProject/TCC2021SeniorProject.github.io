@@ -301,7 +301,7 @@ $(function() {
         });
         
         nav_icon.css({
-          'width': 50 * fontSizeValue + 'px'
+          'width': 50 + 'px'
         });
 
         //set nav bar height size on scroll
@@ -336,6 +336,10 @@ $(function() {
 
         nav_left_items.css({
           'font-size': 1.0 + 'vmax'
+        });
+
+        nav_icon.css({
+          'width': 50 + 'px'
         });
       }
     }
