@@ -8,20 +8,24 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="./src/css/main_page.css">
+    <link rel="stylesheet" href="./src/css/diagram.css">
     <!--
       use this on css
       font-family: 'Anton', sans-serif;
       font-family: 'Bebas Neue', cursive;
       font-family: 'Fjalla One', sans-serif;
       font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
     -->
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
     </style>
     <script type="text/javascript" src="./src/script/main_page.js"> </script>
+    <script type="text/javascript" src="./src/script/diagram.js"> </script>
   </head>
   <!-- Navigation bar -->
   <header id="top">
@@ -64,6 +68,150 @@
         <img src="./src/img/icons/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png" alt="" class="image">
       </a>
     </aside>
+
+    <div class="canvas" id="canvas">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7"
+          refX="5.5" refY="3.5" orient="auto">
+            <polygon points="0 0, 5 3.5, 0 7" />
+          </marker>
+        </defs>
+      </svg>
+
+      <svg>
+        <line class="line" id="line_1" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+      <svg>
+        <line class="line" id="line_2" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+      <svg>
+        <line class="line" id="line_3" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+      <svg>
+        <line class="line" id="line_4" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+      <svg>
+        <line class="line" id="line_5" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+      <svg>
+        <line class="line" id="line_6" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+      <svg>
+        <line class="line" id="line_7" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+      <svg>
+        <line class="line" id="line_8" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+      <svg>
+        <line class="line" id="line_9" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+      <svg>
+        <line class="line" id="line_10" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
+      </svg>
+
+      <div class="outer_circle" id ="outer_circle_1">
+        <div class="circle" id ="circle_1">
+          <div class="inner_circle"></div>
+        </div>
+      </div>
+
+      <p class="text_box" id="text_box_1">
+        Start
+        <span class="text_box_content">
+          <span style="color:rgb(90, 90, 199);">async def</span> Start<span style="color:rgb(90, 146, 199);">(self):</span></br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;device_on == true: </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Charge() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(34, 85, 27);">//Syncing progress</span></br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await</span> <span style="color:rgb(90, 146, 199);">self</span>.Sync() </br>
+        </span>
+      </p>
+
+      <div class="outer_circle" id ="outer_circle_2">
+        <div class="circle" id ="circle_2"></div>
+      </div>
+
+      <p class="text_box" id="text_box_2">
+        Charge
+        <span class="text_box_content">
+          <span style="color:rgb(90, 90, 199);">async def</span> Charge<span style="color:rgb(90, 146, 199);">(self):</span></br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;fully_charged == true: </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Run() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(34, 85, 27);">//Syncing progress</span></br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await</span> <span style="color:rgb(90, 146, 199);">self</span>.Sync() </br>
+        </span>
+      </p>
+
+      <div class="outer_circle" id ="outer_circle_3">
+        <div class="circle" id ="circle_3"></div>
+      </div>
+
+      <p class="text_box" id="text_box_3">
+        Run
+        <span class="text_box_content">
+          <span style="color:rgb(90, 90, 199);">async def</span> Run<span style="color:rgb(90, 146, 199);">(self):</span></br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 0: </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Start() </br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 1: </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Sync() </br>
+        </span>
+      </p>
+
+      <div class="outer_circle" id ="outer_circle_4">
+        <div class="circle" id ="circle_4"></div>
+      </div>
+      <p class="text_box" id="text_box_4">
+        Sync
+        <span class="text_box_content">
+          <span style="color:rgb(90, 90, 199);">async def</span> Sync<span style="color:rgb(90, 146, 199);">(self):</span></br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 2: </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Run() </br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 3: </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Check_Status() </br>
+        </span>
+      </p>
+
+      <div class="outer_circle" id ="outer_circle_5">
+        <div class="circle" id ="circle_5"></div>
+      </div>
+      <p class="text_box" id="text_box_5">
+        Check
+        Status
+        <span class="text_box_content">
+          <span style="color:rgb(90, 90, 199);">async def</span> Check_Status<span style="color:rgb(90, 146, 199);">(self):</span></br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 2: </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Run() </br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 4: </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Return() </br>
+        </span>
+      </p>
+
+      <div class="outer_circle" id ="outer_circle_6">
+        <div class="circle" id ="circle_6"></div>
+      </div>
+      <p class="text_box" id="text_box_6">
+        Return
+        <span class="text_box_content">
+          <span style="color:rgb(90, 90, 199);">async def</span> Return<span style="color:rgb(90, 146, 199);">(self):</span></br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 5: </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.End() </br>
+        </span>
+      </p>
+
+      <div class="outer_circle" id ="outer_circle_7">
+        <div class="circle" id ="circle_7">
+          <div class="inner_circle"></div>
+        </div>
+      </div>
+      <p class="text_box" id="text_box_7">
+        End
+        <span class="text_box_content">
+          <span style="color:rgb(90, 90, 199);">async def</span> End<span style="color:rgb(90, 146, 199);">(self):</span></br>
+          &nbsp;&nbsp;exit() </br>
+        </span>
+      </p>
+    </div>
+
     <!-- First section-->
     <section id="main_section">
       <div class="content_section" id="intro_div">
@@ -137,7 +285,7 @@
         </div>
       </div>
       <!-- Line -->
-      <hr class="line" id="first_semester_div"> </hr>
+      <hr class="div_line" id="first_semester_div"> </hr>
       <!-- Semester content -->
       <div class="semester_section">
         <div class="sub_header_div">
@@ -294,7 +442,7 @@
         </div>
       </div>
 
-      <hr class="line" id="second_semester_div"> </hr>
+      <hr class="div_line" id="second_semester_div"> </hr>
 
       <!-- semester content -->
       <div class="semester_section">

@@ -40,9 +40,8 @@ table {
 .github_box {
   position: fixed;
   left: 0px;
-  top: 88%;
-  bottom: 10%;
-  z-index: 100;
+  bottom: 1%;
+  z-index: 5;
 }
 
 .github_box a {
@@ -89,7 +88,7 @@ table {
 /* overall nav */
 #nav_bar {
   position: fixed;
-  z-index:1; /*Add this*/
+  z-index: 3; /*Add this*/
   top: 0px;
   right: 0px;
   left: 0px;
@@ -103,9 +102,10 @@ table {
   width: 100%;
   min-height: 60px;
 }
-  
+
   /* left side of the nav */
   #nav_bar_icon img {
+    position: relative;
     margin-left: 25px;
     width: 70px;
     transition-duration: 2s;
@@ -117,6 +117,7 @@ table {
   }
 
   #nav_bar_link {
+    position: relative;
     width: 30%;
     height: initial;
     display: flex;
@@ -129,24 +130,25 @@ table {
     padding-top: 5px;
     padding-bottom: 5px;
   }
-  
+
   #nav_bar_link p {
     font-size: 1.5vw;
     transition-duration: 0.8s;
     color: rgb(185, 185, 185);
   }
-  
+
   #nav_bar_link :hover  {
     transition-duration: 0.8s;
     color: rgb(255, 255, 255);
   }
-  
+
   #nav_bar_link .nav_title {
     margin-left: 50px;
   }
-  
+
   /* Nav Center Header */
   #nav_head_title {
+    position: sticky;
     width: 35%;
     text-align: center;
     align-self: center;
@@ -161,10 +163,13 @@ table {
     border-color: hsl(0, 43%, 41%);
     box-shadow: 0px 4px 20px 1px hsl(0, 43%, 41%);
     opacity: 1;
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
 
   /* right side of the nav */
   .right_nav_items {
+    position: relative;
     width: 35%;
   }
 
@@ -173,7 +178,7 @@ table {
     align-content: center;
     margin-right: 35px;
   }
-    
+
   .nav_item, .nav_item a {
     width: 35%;
     text-align: center;
@@ -186,7 +191,7 @@ table {
     text-decoration: none;
     color: rgb(185, 185, 185);
   }
-  
+
   .nav_item:hover , .nav_item a:hover {
     scroll-behavior: smooth;
     transition-duration: 0.8s;
@@ -226,12 +231,19 @@ table {
   position: relative;
   width: 70%;
   margin: auto;
+  margin-top: 0%;
+}
+
+.semester_section{
+  position: relative;
+  z-index: 2;
 }
 
 .content_section {
   display: flex;
+  margin-top: 0%;
   flex-direction: column;
-  z-index:2; /*Add this*/
+  z-index: 2; /*Add this*/
 }
 
 #intro_div:after {
@@ -239,10 +251,11 @@ table {
   position:absolute;
   left: -23%;
   top: 3%;
+  margin-top: 0%;
   width:155%;
   transform: rotate(10deg);
   transform-origin: 0% 0%;
-  z-index:-1; /*Add this*/
+  z-index: -1; /*Add this*/
   border-top:150px ridge #770000;
 }
 
@@ -279,7 +292,7 @@ table {
 
   /* First section of lsit */
   #intro_div {
-    margin-top: 150px;
+    margin-top: 3%;
   }
 
   #intro_div .span_icon img {
@@ -297,7 +310,7 @@ table {
   #sponsor_label {
     font-size: 18px;
   }
-  
+
   .email_address_p {
     font-size: 17px;
     font-style: italic;
@@ -317,7 +330,7 @@ table {
     filter: invert(99%) sepia(93%) saturate(3%) hue-rotate(20deg) brightness(108%) contrast(99%);;
   }
 
-  
+
   /*               Semester boxes                */
 
   .semester_box_repeater {
@@ -367,6 +380,7 @@ table {
   }
 
   .subject_span_icon {
+    clear: both;
     width: 15%;
     line-height: 0;
     padding-left: 20px;
@@ -397,7 +411,7 @@ table {
   }
 
   .div_li_first_semester_plan_list_item a {
-    z-index: 1;
+    z-index: 2;
     min-height: 25px;
     padding-left: 10px;
     padding-right: 10px;
@@ -454,12 +468,13 @@ table {
 
 /*           Miscellaneous attributes           */
 
-.line {
+.div_line {
   width: 100%;
   border: 3px solid rgb(141, 141, 141);
   border-radius: 7px;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  z-index: 2;
 }
 
 .email_address_p {
@@ -467,9 +482,7 @@ table {
   color: #A49C5B;
 }
 
-
 /*           Button Progress attributes           */
-
 
 .in_progress a {
   animation: changeColor1 10s infinite;
@@ -483,10 +496,10 @@ table {
 }
 
 @keyframes changeColor1 {
-  0% { 
+  0% {
     border-color: #8882ff;
   }
-  10% { 
+  10% {
     border-color: #8882ff;
   }
   20% {

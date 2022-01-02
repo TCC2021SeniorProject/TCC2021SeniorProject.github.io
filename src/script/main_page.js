@@ -79,6 +79,9 @@ $(function() {
   var box_icons = $('.span_icon img');
   var initialWidth = $( window ).width();
 
+  //animation section
+  var canvas = $('#canvas')
+
   //semester boxes
   var main_section = $('#main_section');
   var semester_section = $('.semester_section');
@@ -90,7 +93,7 @@ $(function() {
   var semester_box_repeater = $('.semester_box_repeater');
   var box_button_text = $('.div_li_first_semester_plan_list_item a');
   var footer_legal = $('.footer_legal');
-  
+
 
   function miniSize() {
 
@@ -98,10 +101,13 @@ $(function() {
       'width' : 100 + "%",
     });
 
+    canvas.css({
+      display: 'none'
+    });
+
     github_button.css({
-      'left': 0 + 'px',
-      'top': 85 + '%',
-      'bottom': 10 + '%',
+      'margin-bottom': 30 + '%',
+      'padding-left': 5 + 'px',
       'font-size': 12 + 'px',
       'padding': 0,
       'transform': 'rotate(270deg)',
@@ -234,11 +240,11 @@ $(function() {
    *          Window size function
    */
   //when opened window is smaller than the optimal size
-  if (initialWidth < MINIMUM_WINDOW_WIDTH) {   
-    max_window_trigger = false; 
+  if (initialWidth < MINIMUM_WINDOW_WIDTH) {
+    max_window_trigger = false;
     miniSize();
   } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH) {
-    max_window_trigger = true; 
+    max_window_trigger = true;
   }
 
   $(window).resize(function() {
@@ -299,9 +305,9 @@ $(function() {
         nav_left_items.css({
           'font-size': fontSizeValue + 'vmax'
         });
-        
+
         nav_icon.css({
-          'width': 50 * fontSizeValue + 'px'
+          'width': 60 + 'px'
         });
 
         //set nav bar height size on scroll
@@ -309,7 +315,7 @@ $(function() {
         nav_bar.css({
           height: newHeight
         });
-        
+
         //set opacity on scroll
         opacityValue = calculateOpacityValue(winScrollTop, 220);
         main_title.css({
@@ -347,7 +353,7 @@ $(function() {
   }
 
   function calculateOpacityValue(currentScroll, scrollBoundary) {
-    var opacityValue = 1 - (currentScroll / scrollBoundary);
+    var opacityValue = 0.6 - (currentScroll / scrollBoundary);
     return opacityValue;
   }
 
