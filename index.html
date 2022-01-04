@@ -110,6 +110,17 @@
         <line class="line" id="line_10" x1="0" y1="0" x2="0" y2="0" fill="#CDCED0" marker-end="url(#arrowhead)" />
       </svg>
 
+      <p class="transition_text" id="transition_text_1">device_on == true </p>
+      <p class="transition_text" id="transition_text_2">fully_charged == true</p>
+      <p class="transition_text" id="transition_text_3">mode == 0 </br> mode == 2</p>
+      <p class="transition_text" id="transition_text_4">mode == 3</p>
+      <p class="transition_text" id="transition_text_5">mode == 4</p>
+      <p class="transition_text" id="transition_text_6"></p>
+      <p class="transition_text" id="transition_text_7">mode == 0 </p>
+      <p class="transition_text" id="transition_text_8">mode == 2 </p>
+      <p class="transition_text" id="transition_text_9"></p>
+      <p class="transition_text" id="transition_text_10"></p>
+
       <div class="outer_circle" id ="outer_circle_1">
         <div class="circle" id ="circle_1">
           <div class="inner_circle"></div>
@@ -121,9 +132,7 @@
         <span class="text_box_content">
           <span style="color:rgb(90, 90, 199);">async def</span> Start<span style="color:rgb(90, 146, 199);">(self):</span></br>
           &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;device_on == true: </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Charge() </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(34, 85, 27);">//Syncing progress</span></br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await</span> <span style="color:rgb(90, 146, 199);">self</span>.Sync() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await </span><span style="color:rgb(70, 170, 56);">template()</span>.Charge() </br>
         </span>
       </p>
 
@@ -136,9 +145,7 @@
         <span class="text_box_content">
           <span style="color:rgb(90, 90, 199);">async def</span> Charge<span style="color:rgb(90, 146, 199);">(self):</span></br>
           &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;fully_charged == true: </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Run() </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(34, 85, 27);">//Syncing progress</span></br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await</span> <span style="color:rgb(90, 146, 199);">self</span>.Sync() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await </span><span style="color:rgb(70, 170, 56);">template()</span>.Run() </br>
         </span>
       </p>
 
@@ -151,9 +158,9 @@
         <span class="text_box_content">
           <span style="color:rgb(90, 90, 199);">async def</span> Run<span style="color:rgb(90, 146, 199);">(self):</span></br>
           &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 0: </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Start() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await </span><span style="color:rgb(70, 170, 56);">template()</span>.Start() </br>
           &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 1: </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Sync() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp<span style="color:rgb(153, 94, 71);">await </span><span style="color:rgb(70, 170, 56);">template()</span>.Sync() </br>
         </span>
       </p>
 
@@ -165,9 +172,9 @@
         <span class="text_box_content">
           <span style="color:rgb(90, 90, 199);">async def</span> Sync<span style="color:rgb(90, 146, 199);">(self):</span></br>
           &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 2: </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Run() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await </span><span style="color:rgb(70, 170, 56);">template()</span>.Run() </br>
           &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 3: </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Check_Status() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await </span><span style="color:rgb(70, 170, 56);">template()</span>.Check_Status() </br>
         </span>
       </p>
 
@@ -180,9 +187,9 @@
         <span class="text_box_content">
           <span style="color:rgb(90, 90, 199);">async def</span> Check_Status<span style="color:rgb(90, 146, 199);">(self):</span></br>
           &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 2: </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Run() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await </span><span style="color:rgb(70, 170, 56);">template()</span>.Run() </br>
           &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 4: </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.Return() </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await </span><span style="color:rgb(70, 170, 56);">template()</span>.Return() </br>
         </span>
       </p>
 
@@ -193,8 +200,7 @@
         Return
         <span class="text_box_content">
           <span style="color:rgb(90, 90, 199);">async def</span> Return<span style="color:rgb(90, 146, 199);">(self):</span></br>
-          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">if</span> &nbsp;mode == 5: </br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:rgb(70, 170, 56);">template()</span>.End() </br>
+          &nbsp;&nbsp;<span style="color:rgb(153, 94, 71);">await </span><span style="color:rgb(70, 170, 56);">template()</span>.End() </br>
         </span>
       </p>
 
@@ -207,7 +213,7 @@
         End
         <span class="text_box_content">
           <span style="color:rgb(90, 90, 199);">async def</span> End<span style="color:rgb(90, 146, 199);">(self):</span></br>
-          &nbsp;&nbsp;exit() </br>
+          &nbsp;&nbsp;sys.exit() </br>
         </span>
       </p>
     </div>

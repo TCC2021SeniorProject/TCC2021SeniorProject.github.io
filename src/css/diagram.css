@@ -1,17 +1,18 @@
 
 .canvas {
+    margin-left: 8%;
+    margin-top: 2%;
     position: relative;
     width: 100%;
     height: 250px;
-    background-color: hsla(0, 0%, 90%, 0.882);
-    margin-top: 3%;
-    margin-left: 8%;
+    background-color: hsl(0, 0%, 96%);
+    box-shadow: inset 0px 0px 15px 25px hsla(0, 0%, 90%, 0.882);
 }
 
 .outer_circle {
     position: absolute;
-    height: 65px;
-    width: 65px;
+    height: 45px;
+    width: 45px;
     border: 1px solid;
     border-color: hsl(0, 54%, 33%);
     border-style: dashed;
@@ -71,6 +72,16 @@ svg {
     fill: rgb(84, 113, 177);
 }
 
+.transition_text {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    font-size: 8px;
+    font-family: 'Poppins', sans-serif;
+    color: hsl(310, 75%, 27%);
+}
+
 #outer_circle_1,
 #text_box_1 {
     top : 30%;
@@ -119,15 +130,16 @@ svg {
     background-color: rgb(255, 127, 127);
 }
 
+
 .text_box {
     position: absolute;
     display: inline-block;
-    height: 65px;
-    width: 65px;
+    height: 45px;
+    width: 45px;
     font-size: 12px;
     text-align: center;
     margin-left: 2px;
-    margin-top: 1.2%;
+    margin-top: 16px;
     font-family: 'Poppins', sans-serif;
     color: rgb(255, 255, 255);
     transition: 1s;
