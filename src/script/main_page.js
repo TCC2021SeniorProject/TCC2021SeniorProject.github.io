@@ -65,7 +65,7 @@ $(function() {
   var nav_bar = $('#nav_bar');
   var nav_icon = $('#nav_bar_icon img');
   var nav_bar_div = $('nav_bar_link');
-  var nav_left_items = $('#nav_bar_link p');
+  var nav_left_item = $('#nav_title');
   var main_title = $('#nav_head_title');
   var main_title_h = $('#nav_head_title h1');
   var nav_right_items = $('.right_nav_items');
@@ -136,7 +136,7 @@ $(function() {
       'font-size': 17 + 'px'
     });
 
-    nav_left_items.css({
+    nav_left_item.css({
       'padding-top' : 5 + 'px',
       'font-size': 17 + 'px',
       'margin-left': 0 + 'px',
@@ -280,7 +280,7 @@ $(function() {
           'font-size': currentFontSize + 'vw'
         });
 
-        nav_left_items.css({
+        nav_left_item.css({
           'font-size': currentFontSize + 'vw'
         });
 
@@ -302,7 +302,7 @@ $(function() {
         nav_right_items_a.css({
           'font-size': fontSizeValue + 'vmax'
         });
-        nav_left_items.css({
+        nav_left_item.css({
           'font-size': fontSizeValue + 'vmax'
         });
 
@@ -340,7 +340,7 @@ $(function() {
           'font-size': 1.0 + 'vmax'
         });
 
-        nav_left_items.css({
+        nav_left_item.css({
           'font-size': 1.0 + 'vmax'
         });
       }

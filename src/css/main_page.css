@@ -103,21 +103,27 @@ table {
   min-height: 60px;
 }
 
+  #nav_bar_icon {
+    position: static;
+    width: 10%;
+  }
+
   /* left side of the nav */
   #nav_bar_icon img {
-    position: relative;
+    position: static;
     margin-left: 25px;
     width: 70px;
     transition-duration: 2s;
   }
 
   #nav_bar_icon img:hover {
+    position: static;
     transform: rotate(-360deg);
     transition-duration: 1.0s;
   }
 
   #nav_bar_link {
-    position: relative;
+    position: static;
     width: 30%;
     height: initial;
     display: flex;
@@ -143,12 +149,13 @@ table {
   }
 
   #nav_bar_link .nav_title {
+    position: static;
     margin-left: 50px;
   }
 
   /* Nav Center Header */
   #nav_head_title {
-    position: sticky;
+    position: static;
     width: 35%;
     text-align: center;
     align-self: center;
