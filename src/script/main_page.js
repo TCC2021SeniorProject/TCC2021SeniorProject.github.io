@@ -1,44 +1,59 @@
-//Nav buttons hover function
-$(function() {
-  //left element of navigation
-  $('#nav_bar_link').hover(function() {
-    $('#nav_bar_link .nav_title').css('color', 'rgb(255, 255, 255)');
-  }, function() {
-    $('#nav_bar_link .nav_title').css('color', 'rgb(185, 185, 185)');
-  });
-
-  //home button
-  $('#home_nav_btn').hover(function() {
-    $('#home_nav_p').css('transition-duration', '0.8s');
-    $('#home_nav_p').css('color', 'rgb(255, 255, 255)');
-  }, function() {
-    $('#home_nav_p').css('transition-duration', '0.8s');
-    $('#home_nav_p').css('color', 'rgb(185, 185, 185)');
-  });
-
-  //semester 1 button
-  $('#sem1_nav_btn').hover(function() {
-    $('#sem1_nav_p').css('transition-duration', '0.8s');
-    $('#sem1_nav_p').css('color', 'rgb(255, 255, 255)');
-  }, function() {
-    $('#sem1_nav_p').css('transition-duration', '0.8s');
-    $('#sem1_nav_p').css('color', 'rgb(185, 185, 185)');
-  });
-
-  //semester 2 button
-  $('#sem2_nav_btn').hover(function() {
-    $('#sem2_nav_p').css('transition-duration', '0.8s');
-    $('#sem2_nav_p').css('color', 'rgb(255, 255, 255)');
-  }, function() {
-    $('#sem2_nav_p').css('transition-duration', '0.8s');
-    $('#sem2_nav_p').css('color', 'rgb(185, 185, 185)');
-  });
-});
-
 //anything that goes below 1050px, will be considered as mobile
 const MINIMUM_WINDOW_WIDTH = 800;
 
 var max_window_trigger;
+
+function navBarIconHover() {
+  $('#nav_bar_icon img').hover(function() {
+    $('#nav_bar_icon img').css('transition-duration', '1.5s');
+    $('#nav_bar_icon img').css('transform', 'rotate(-360deg)');
+  }, function() {
+    $('#nav_bar_icon img').css('transition-duration', '1.5s');
+    $('#nav_bar_icon img').css('transform', 'rotate(0deg)');
+  });
+}
+
+function imgResize(targetImg, parent_div) {
+
+}
+
+function boxContentHandler() {
+  //sponsor box hover
+  $('#sponser_box').hover(function() {
+    $('#sponser_content').css('display', 'none');
+    $('#sponser_hover_content').css('display', 'block');
+  }, function() {
+    $('#sponser_content').css('display', 'block');
+    $('#sponser_hover_content').css('display', 'none');
+  });
+
+  //First member box hover
+  $('#first_member_box').hover(function() {
+    $('#first_member_content').css('display', 'none');
+    $('#first_member_hover_content').css('display', 'block');
+  }, function() {
+    $('#first_member_content').css('display', 'block');
+    $('#first_member_hover_content').css('display', 'none');
+  });
+
+  //Second member box hover
+  $('#second_member_box').hover(function() {
+    $('#second_member_content').css('display', 'none');
+    $('#second_member_hover_content').css('display', 'block');
+  }, function() {
+    $('#second_member_content').css('display', 'block');
+    $('#second_member_hover_content').css('display', 'none');
+  });
+
+  //Third member box hover
+  $('#third_member_box').hover(function() {
+    $('#third_member_content').css('display', 'none');
+    $('#third_member_hover_content').css('display', 'block');
+  }, function() {
+    $('#third_member_content').css('display', 'block');
+    $('#third_member_hover_content').css('display', 'none');
+  });
+}
 
 //Set initial webpage setting on load
 $(function() {
@@ -94,6 +109,9 @@ $(function() {
   var box_button_text = $('.div_li_first_semester_plan_list_item a');
   var footer_legal = $('.footer_legal');
 
+  navBarIconHover();
+
+  boxContentHandler();
 
   function miniSize() {
 
@@ -267,12 +285,12 @@ $(function() {
   /*
    *            Scroll function
    */
-  var currentFontSize = calculateFontSize();//vw
   var fontBoundary = 350;
+  var currentFontSize = calculateFontSize();//vw
   $(window).scroll(function() {
+    $('#nav_bar_icon img').css('transition-duration', '0.8s');
     if ($(this).width() >= 787) {
       var winScrollTop = $(window).scrollTop();
-      console.log(winScrollTop);
       //Top of the page
       if (winScrollTop <= 15) { //set initial size
 
@@ -285,7 +303,8 @@ $(function() {
         });
 
         nav_icon.css({
-          'width': 70 + 'px'
+          'width': 70 + 'px',
+          'transition-duration': 0.5 + 's'
         });
 
         nav_bar.css({

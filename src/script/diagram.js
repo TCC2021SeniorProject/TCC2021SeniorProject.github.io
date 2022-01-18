@@ -159,7 +159,6 @@ function setTransTextPos (coordinations, transition_texts) {
         var endP = coordinations[index].endPos;
         midPoints.push(getMidPoint(startP, endP, transition_texts[index]));
         if (startP != null && endP != null) {
-            console.log(startP.left);
             tilt_list.push(getTheta(startP.left, startP.top, endP.left, endP.top));
         }
     }
