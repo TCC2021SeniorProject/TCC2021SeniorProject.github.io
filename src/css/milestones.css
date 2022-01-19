@@ -156,7 +156,7 @@ table {
       height: inherit;
       font-family: 'Anton', sans-serif;
       color: hsl(0, 0%, 100%);
-      font-size: 3.3vw;
+      font-size: 80px
       background-color: hsl(0, 43%, 41%);
       border-color: hsl(0, 43%, 41%);
       box-shadow: 0px 4px 20px 1px hsl(0, 43%, 41%);
