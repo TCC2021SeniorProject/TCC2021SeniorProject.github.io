@@ -44,6 +44,7 @@ table {
 
 #header_div {
   width: 100%;
+  margin-top: 5%;
   text-align: center;
   font-family: 'Anton', sans-serif;
   color: hsl(0, 43%, 41%);
@@ -78,124 +79,7 @@ table {
 .content_section_aside {
     display: contents;
     position: relative;
-  }
-
-/*               Navigation section              */
-
-/* overall nav */
-#nav_bar {
-    position: fixed;
-    z-index: 3; /*Add this*/
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    color: azure;
-    background-color: hsl(0, 43%, 41%);
-    box-shadow: 0px 0px 35px #770000;
-    height: 90px;
-    width: 100%;
-    min-height: 90px;
-  }
-
-    #nav_bar_icon {
-      position: static;
-      width: 10%;
-    }
-
-    /* left side of the nav */
-    #nav_bar_icon img {
-      position: static;
-      margin-left: 25px;
-      width: 50px;
-      transition-duration: 2s;
-    }
-
-    #nav_bar_icon img:hover {
-      position: static;
-    }
-
-    #nav_bar_link {
-      position: static;
-      width: 26%;
-      height: initial;
-      display: flex;
-      font-family: 'Bebas Neue', cursive;
-      margin-left: 12px;
-      color: azure;
-      text-decoration: none;
-      padding-left: 8px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-
-    #nav_bar_link .nav_title:hover  {
-      transition-duration: 0.5s;
-      color: rgb(255, 255, 255);
-    }
-
-    #nav_bar_link .nav_title {
-      position: static;
-      margin-left: 50px;
-      font-size: 1.8vw;
-      transition-duration: 0.8s;
-      color: rgb(185, 185, 185);
-    }
-
-    /* Nav Center Header */
-    #nav_head_title {
-      position: static;
-      width: 35%;
-      text-align: center;
-      align-self: center;
-    }
-
-    .header_title {
-      height: inherit;
-      font-family: 'Anton', sans-serif;
-      color: hsl(0, 0%, 100%);
-      font-size: 50px
-      background-color: hsl(0, 43%, 41%);
-      border-color: hsl(0, 43%, 41%);
-      box-shadow: 0px 4px 20px 1px hsl(0, 43%, 41%);
-      opacity: 1;
-      margin-bottom: 5px;
-      margin-top: 5px;
-    }
-
-    /* right side of the nav */
-    .right_nav_items {
-      position: relative;
-      width: 35%;
-    }
-
-    #nav_bar ul {
-      display: flex;
-      align-content: center;
-      margin-right: 35px;
-    }
-
-    .nav_item, .nav_item a {
-      width: 35%;
-      text-align: center;
-      vertical-align: middle;
-      scroll-behavior: smooth;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 1.8vw;
-      list-style: none;
-      transition-duration: 0.8s;
-      text-decoration: none;
-      color: rgb(185, 185, 185);
-    }
-
-    .nav_item:hover , .nav_item a:hover {
-      scroll-behavior: smooth;
-      transition-duration: 0.8s;
-      cursor: pointer;
-      color: rgb(255, 255, 255);
-    }
+}
 
   /*               Semester boxes                */
 

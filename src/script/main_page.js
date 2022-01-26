@@ -80,11 +80,9 @@ $(function() {
   var nav_bar = $('#nav_bar');
   var nav_icon = $('#nav_bar_icon img');
   var nav_bar_div = $('nav_bar_link');
-  var nav_left_item = $('#nav_title');
   var main_title = $('#nav_head_title');
   var main_title_h = $('#nav_head_title h1');
   var nav_right_items = $('.right_nav_items');
-  var nav_right_items_a = $('.right_nav_items a');
 
   //intro cards
   var intro_div = $('#intro_div')
@@ -114,7 +112,6 @@ $(function() {
   boxContentHandler();
 
   function miniSize() {
-
     body.css({
       'width' : 100 + "%",
     });
@@ -281,118 +278,4 @@ $(function() {
       },1);
     }
   });
-
-  /*
-   *            Scroll function
-   */
-  var fontBoundary = 350;
-  var currentFontSize = calculateFontSize();//vw
-  $(window).scroll(function() {
-    $('#nav_bar_icon img').css('transition-duration', '0.8s');
-    if ($(this).width() >= 787) {
-      var winScrollTop = $(window).scrollTop();
-      //Top of the page
-      if (winScrollTop <= 15) { //set initial size
-
-        nav_right_items_a.css({
-          'font-size': currentFontSize + 'vw'
-        });
-
-        nav_left_item.css({
-          'font-size': currentFontSize + 'vw'
-        });
-
-        nav_icon.css({
-          'width': 70 + 'px',
-          'transition-duration': 0.5 + 's'
-        });
-
-        nav_bar.css({
-          height: 160
-        });
-
-        main_title.css({
-          opacity: 1
-        });
-
-      } else if (winScrollTop < fontBoundary && winScrollTop > 5) { //set dynamic size
-        //set font
-        var fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
-        nav_right_items_a.css({
-          'font-size': fontSizeValue + 'vmax'
-        });
-        nav_left_item.css({
-          'font-size': fontSizeValue + 'vmax'
-        });
-
-        nav_icon.css({
-          'width': 60 + 'px'
-        });
-
-        //set nav bar height size on scroll
-        var newHeight = calculateHeightToSet(winScrollTop, 160);
-        nav_bar.css({
-          height: newHeight
-        });
-
-        //set opacity on scroll
-        opacityValue = calculateOpacityValue(winScrollTop, 220);
-        main_title.css({
-          opacity: opacityValue
-        });
-      } else { //set minimum size
-
-        nav_icon.css({
-          'width': 50 + 'px'
-        });
-
-        nav_bar.css({
-          height: 60
-        });
-
-        main_title.css({
-          opacity: 0
-        });
-
-        var fontSizeValue = getCurrentFontSize(fontBoundary, currentFontSize);
-        nav_right_items_a.css({
-          'font-size': 1.0 + 'vmax'
-        });
-
-        nav_left_item.css({
-          'font-size': 1.0 + 'vmax'
-        });
-      }
-    }
-  });
-
-  function calculateHeightToSet(currentScroll, scrollBoundary) {
-    var finalHeight = (scrollBoundary) - (currentScroll) * (9 / 10);
-    return finalHeight;
-  }
-
-  function calculateOpacityValue(currentScroll, scrollBoundary) {
-    var opacityValue = 0.6 - (currentScroll / scrollBoundary);
-    return opacityValue;
-  }
-
-  //calculate font size: font from 1vw ~ 1.5vw
-  //current scroll in px current font in px
-  function getCurrentFontSize(currentScroll, currentFontSize) {
-    //vm to px
-    var variationRnage = 0.5 / (100/($(window).width()));
-    //all in px
-    var finalValue = ((1 / currentScroll) * variationRnage) + (currentFontSize * 2 / 3);
-    return finalValue;
-  }
-
-  function calculateFontSize() {
-    //px
-    var currentFontSize = nav_right_items_a.css('font-size');
-    //get only the digits
-    currentFontSize = parseInt(currentFontSize, 10);
-    //change px in vw suffix
-    currentFontSize = currentFontSize * (100/($(window).width()));
-    return currentFontSize;
-  }
 });
