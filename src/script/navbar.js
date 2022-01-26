@@ -1,6 +1,5 @@
-const MAX_SCROLL_BOUNDARY = 350;
-
 function navbarReaction() {
+    const SCROLL_BOUNDARY = 350;
     var currentFontSize = calculateFontSize();//vw
     $(window).scroll(function() {
         $('#nav_bar_icon img').css('transition-duration', '0.8s');
@@ -8,34 +7,30 @@ function navbarReaction() {
         //Top of the page
         if (winScrollTop <= 15) { //set initial size
             $('.right_nav_items a').css({
-            'font-size': currentFontSize + 'vw'
-            });
-
-            $('#nav_title').css({
-            'font-size': currentFontSize + 'vw'
+                'font-size': 1.3 + 'em'
             });
 
             $('#nav_bar_icon img').css({
-            'width': 70 + 'px',
-            'transition-duration': 0.5 + 's'
+                'width': 70 + 'px',
+                'transition-duration': 0.5 + 's'
             });
 
             $('#nav_bar').css({
-            height: 160
+                height: 150
             });
 
             $('#nav_head_title').css({
-            opacity: 1
+                opacity: 1
             });
 
-        } else if (winScrollTop < MAX_SCROLL_BOUNDARY && winScrollTop > 5) { //set dynamic size
-            //set font
+        } else if (winScrollTop < SCROLL_BOUNDARY && winScrollTop > 5) { //set dynamic size
             var fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
+            //set font
             $('.right_nav_items a').css({
-            'font-size': fontSizeValue + 'vmax'
+                'font-size': fontSizeValue + 'vw'
             });
             $('#nav_title').css({
-            'font-size': fontSizeValue + 'vmax'
+                'font-size': fontSizeValue + 'vw'
             });
 
             $('#nav_bar_icon img').css({
@@ -56,6 +51,7 @@ function navbarReaction() {
             });
 
         } else { //set minimum size
+            var fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
             $('#nav_bar_icon img').css({
             'width': 50 + 'px'
             });
@@ -68,13 +64,13 @@ function navbarReaction() {
             opacity: 0
             });
 
-            var fontSizeValue = getCurrentFontSize(MAX_SCROLL_BOUNDARY, currentFontSize);
+            var fontSizeValue = getCurrentFontSize(SCROLL_BOUNDARY, currentFontSize);
             $('.right_nav_items a').css({
-            'font-size': 1.0 + 'vmax'
+                'font-size': fontSizeValue + 'vw'
             });
 
             $('#nav_title').css({
-            'font-size': 1.0 + 'vmax'
+                'font-size': fontSizeValue + 'vw'
             });
         }
     });
@@ -113,5 +109,55 @@ function calculateFontSize() {
 }
 
 $(function() {
-  navbarReaction();
+    const MINIMUM_WINDOW_WIDTH = 800;
+    navbarReaction();
+
+    var initialWidth = $( window ).width();
+    if (initialWidth < MINIMUM_WINDOW_WIDTH) {
+        max_window_trigger = false;
+        miniSize();
+      } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH) {
+        max_window_trigger = true;
+      }
+
+    function miniSize() {
+
+        $('#nav_bar').css({
+            'text-align': 'center',
+        });
+
+        $('#nav_bar_link').css({
+            'display': 'none',
+        });
+
+        $('#nav_bar_icon').css({
+            'display': 'none',
+        });
+
+        $('#nav_head_title').css({
+            "width": 50 + '%',
+        });
+
+        $('.right_nav_items').css({
+            "width": 50 + '%',
+        });
+
+    }
+
+    $(window).resize(function() {
+        //reload attritubes on resize
+        if ($(this).width() < MINIMUM_WINDOW_WIDTH && max_window_trigger) {
+        max_window_trigger = false;
+        max_window_trigger = true;
+        setTimeout(function(){
+            window.location.reload();
+        },1);
+        miniSize();
+        } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH) {
+        max_window_trigger = true;
+        setTimeout(function(){
+            window.location.reload();
+        },1);
+        }
+    });
 });

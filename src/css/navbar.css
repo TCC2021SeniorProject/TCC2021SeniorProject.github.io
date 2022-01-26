@@ -1,5 +1,9 @@
 
-/*               Navigation section              */
+/*
+    This navigation style sheet will be used on multiple pages
+*/
+
+
 
 /* overall nav */
 #nav_bar {
@@ -98,13 +102,15 @@
   /* right side of the nav */
   .right_nav_items {
     position: relative;
-    width: 35%;
+    width: 40%;
   }
 
   #nav_bar ul {
     display: flex;
+    position: sticky;
     align-content: center;
     margin-right: 35px;
+    width: 90%;
   }
 
   .nav_item, .nav_item a {
@@ -113,7 +119,7 @@
     vertical-align: middle;
     scroll-behavior: smooth;
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.8vw;
+    font-size: 1.3em;
     list-style: none;
     transition-duration: 0.8s;
     text-decoration: none;
