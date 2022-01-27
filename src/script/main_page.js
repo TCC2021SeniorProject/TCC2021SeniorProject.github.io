@@ -12,36 +12,36 @@ function boxContentHandler() {
   //sponsor box hover
   $('#sponser_box').hover(function() {
     $('#sponser_content').css('display', 'none');
-    $('#sponser_hover_content').css('display', 'block');
+    $('#sponser_hover_content').css('display', 'inline-block');
   }, function() {
-    $('#sponser_content').css('display', 'block');
+    $('#sponser_content').css('display', 'inline-block');
     $('#sponser_hover_content').css('display', 'none');
   });
 
   //First member box hover
   $('#first_member_box').hover(function() {
     $('#first_member_content').css('display', 'none');
-    $('#first_member_hover_content').css('display', 'block');
+    $('#first_member_hover_content').css('display', 'inline-block');
   }, function() {
-    $('#first_member_content').css('display', 'block');
+    $('#first_member_content').css('display', 'inline-block');
     $('#first_member_hover_content').css('display', 'none');
   });
 
   //Second member box hover
   $('#second_member_box').hover(function() {
     $('#second_member_content').css('display', 'none');
-    $('#second_member_hover_content').css('display', 'block');
+    $('#second_member_hover_content').css('display', 'inline-block');
   }, function() {
-    $('#second_member_content').css('display', 'block');
+    $('#second_member_content').css('display', 'inline-block');
     $('#second_member_hover_content').css('display', 'none');
   });
 
   //Third member box hover
   $('#third_member_box').hover(function() {
     $('#third_member_content').css('display', 'none');
-    $('#third_member_hover_content').css('display', 'block');
+    $('#third_member_hover_content').css('display', 'inline-block');
   }, function() {
-    $('#third_member_content').css('display', 'block');
+    $('#third_member_content').css('display', 'inline-block');
     $('#third_member_hover_content').css('display', 'none');
   });
 }
@@ -112,7 +112,12 @@ $(function() {
       'width' : 25 + 'px',
     });
 
+    $('#download_div').css({
+      'display' : 'none',
+    });
+
     intro_div.css({
+      'margin-left' : 5 + '%',
       'margin-top': 50 + 'px',
     });
 
@@ -206,8 +211,7 @@ $(function() {
         window.location.reload();
       },1);
       miniSize();
-    } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH) {
-      max_window_trigger = true;
+    } else {
       setTimeout(function(){
         window.location.reload();
       },1);

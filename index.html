@@ -13,10 +13,11 @@
     <!--
       use this on css
       font-family: 'Anton', sans-serif;
-      font-family: 'Bebas Neue', cursive;
+      font-family: 'Bebas Neue', sans-serif;
       font-family: 'Fjalla One', sans-serif;
       font-family: 'Roboto', sans-serif;
       font-family: 'Poppins', sans-serif;
+      font-family: 'Dongle', sans-serif;
     -->
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
@@ -24,6 +25,7 @@
       @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
     </style>
     <script type="text/javascript" src="./src/script/main_page.js"> </script>
     <script type="text/javascript" src="./src/script/diagram.js"> </script>
@@ -45,7 +47,7 @@
       <div class="right_nav_items">
         <ul>
           <li id="home_nav_btn" class="nav_item">
-            <a href="#top">
+            <a href="#introduction_start">
               <p id="home_nav_p">About</p>
             </a>
           </li>
@@ -69,17 +71,17 @@
           <h2>Required Softwares</h2>
           <div class="inner_div">
             <a class="download_link" href="https://www.java.com/en/download/" target="_blank" rel="noopener noreferrer">
-              <p> Download Java for UPPAAL </p>
+              <p class="version_p">&nbsp(Above Java 6)</p>
+              <p class="link_title"> Download Java for UPPAAL </p>
             </a>
-            <p class="version_p">&nbsp(Above Java 6)</p>
             <a class="download_link" href="https://uppaal.org/downloads/" target="_blank" rel="noopener noreferrer">
-              <p> Download UPPAAL </p>
+              <p class="version_p">&nbsp(4.0.15)</p>
+              <p class="link_title"> Download UPPAAL </p>
             </a>
-            <p class="version_p">&nbsp(4.0.15)</p>
             <a class="download_link" href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
-              <p> Download Python </p>
+              <p class="version_p">&nbsp(3.6.9)</p>
+              <p class="link_title"> Download Python </p>
             </a>
-            <p class="version_p">&nbsp(3.6.9)</p>
           </div>
         </div>
 
@@ -262,152 +264,172 @@
         </span>
       </p>
     </div>
+
+    <section id="introduction_start" style="margin-top:50px; margin-bottom:5px; display:hidden;">
+    </section>
+
     <div id="categories">
+      <article id="mission_statement_section">
+        <h3 id="mission_statement_title"> Mission statement </h3>
+        <p id="mission_statement_content">
+          &nbsp;&nbsp;Our mission is to provide a service to developers that helps in the deployment of IoT systems.</br></br>
+          &nbsp;&nbsp;This is achieved through extending the functionality of an already existing and trusted modeling software, UPPAAL.</br></br>
+          &nbsp;&nbsp;After designing and validating a model in the UPPAAL environment, our translator turns the corresponding model into equivalent Python code.</br></br>
+          &nbsp;&nbsp;Our translator paired with UPPAAL creates a nearly closed loop solution to developing IoT systems, from the initial design to real world deployment.
+        </p>
+      </article>
+
+
       <!-- intro -->
       <div id="second_top_intro">
         <h3> Contact us </h3>
       </div>
-    </div>
 
-    <!-- Contact & Info boxes -->
-    <div class="content_section" id="intro_div">
-      <div class="box_repeater" id="intro_box">
+      <!-- Contact & Info boxes -->
+      <div class="content_section" id="intro_div">
+        <div class="box_repeater" id="intro_box">
 
-        <div class="container_wrapper" id="sponser_box">
-          <div class="box_margin" id="sponser_content">
-            <span class="span_icon">
-              <img src="./src/img/icons/professor-with-clipboard.svg" alt="advisor" style="width: 45px;">
-            </span>
-            <h8 class="team_member_header" id="sponsor_label">
-              Advisor
-            </h8>
-            <h6 class="team_member_header" id="sponsor_name">
-              Dr. Siddhartha Bhattacharyya
-            </h6>
-            <p class="email_address_p">
-              sbhattacharyya@fit.edu
-            </p>
-          </div>
-          <div class="intro_content_hover" id="sponser_hover_content" style="display:none">
-            <a id="sponsor_link" href="https://www.fit.edu/faculty-profiles/b/bhattacharyya-siddhartha/">
-              <img id="sponsor_img" src="./src/img/team-member/Sid.jpg" alt="" class="image">
-            </a>
-            <div class="text_under_content">
-              <a href="https://www.fit.edu/faculty-profiles/b/bhattacharyya-siddhartha/">
-                <h3 style="font-size: 14px; margin-left: 7px;">
-                  Dr. Bhattacharyya
-                  <p>
-                    Project client
-                    </br>
-                  </br>
-                    Click to view Profile
-                  </p>
-                </h3>
+          <div class="container_wrapper" id="sponser_box">
+            <div class="box_margin" id="sponser_content">
+              <span class="span_icon">
+                <h8 class="job_position">
+                  Advisor
+                </h8>
+                <img src="./src/img/icons/professor-with-clipboard.svg" alt="advisor" style="width: 45px;">
+              </span>
+              <h6 class="team_member_header" id="sponsor_name">
+                Dr. Siddhartha Bhattacharyya
+              </h6>
+              <p class="email_address_p">
+                sbhattacharyya@fit.edu
+              </p>
+            </div>
+            <div class="intro_content_hover" id="sponser_hover_content" style="display:none">
+              <a id="sponsor_link" href="https://www.fit.edu/faculty-profiles/b/bhattacharyya-siddhartha/">
+                <img id="sponsor_img" src="./src/img/team-member/Sid.jpg" alt="" class="image">
               </a>
+              <div class="text_under_content">
+                <a href="https://www.fit.edu/faculty-profiles/b/bhattacharyya-siddhartha/">
+                  <h3 style="font-size: 14px; margin-left: 7px;">
+                    Dr. Bhattacharyya
+                    <p>
+                      Project client
+                      </br>
+                    </br>
+                      Click to view Profile
+                    </p>
+                  </h3>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="container_wrapper" id="first_member_box">
-          <div class="box_margin" id="first_member_content">
-            <span class="span_icon">
-              <img src="./src/img/icons/developer.svg" alt="developer" style="width: 45px;">
-            </span>
-            <h8 class="team_member_header">
-              Student
-            </h8>
-            <h6 class="team_member_header">
-              Sung-Jun(Tony)Baek
-            </h6>
-            <p class="email_address_p">
-              sbaek2015@my.fit.edu
-            </p>
-          </div>
-          <div class="intro_content_hover" id="first_member_hover_content" style="display:none">
-            <a id="baek_link" href="">
-              <img id="baek_img" src="./src/img/team-member/baek.png" alt="" class="image">
-            </a>
-            <div class="text_under_content">
-              <a href="https://linkedin.com/in/sung-jun-tony-baek-9b505b11a">
-                <h3 style="font-size: 14px; margin-left: 7px;">
-                  Tony Baek
-                  <p>
-                    Translator / website developer
-                    </br>
-                  </br>
-                    Click to view LinkedIn
-                  </p>
-                </h3>
+          <div class="container_wrapper" id="first_member_box">
+            <div class="box_margin" id="first_member_content">
+              <span class="span_icon">
+                <h8 class="job_position">
+                  Student
+                </h8>
+                <img src="./src/img/icons/developer.svg" alt="developer" style="width: 45px;">
+              </span>
+              <h6 class="team_member_header">
+                Sung-Jun(Tony)Baek
+              </h6>
+              <p class="email_address_p">
+                sbaek2015@my.fit.edu
+              </p>
+            </div>
+            <div class="intro_content_hover" id="first_member_hover_content" style="display:none">
+              <a id="baek_link" href="">
+                <img id="baek_img" src="./src/img/team-member/baek.png" alt="developer" class="image">
               </a>
+              <div class="text_under_content">
+                <a href="https://linkedin.com/in/sung-jun-tony-baek-9b505b11a">
+                  <h3 style="font-size: 14px; margin-left: 7px;">
+                    Tony Baek
+                    <p>
+                      Translator / full-stack developer
+                      </br>
+                    </br>
+                      Click to view LinkedIn
+                    </p>
+                  </h3>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="container_wrapper" id="second_member_box">
-          <div class="box_margin" id="second_member_content">
-            <span class="span_icon">
-              <img src="./src/img/icons/developer.svg" alt="developer" style="width: 45px;">
-            </span>
-            <h8 class="team_member_header">
-              Student
-            </h8>
-            <h6 class="team_member_header">
-              Caelan Shoop
-            </h6>
-            <p class="email_address_p">
-              cshoop2018@my.fit.edu
-            </p>
-          </div>
-          <div class="intro_content_hover" id="second_member_hover_content" style="display:none">
-            <a id="cael_link" href="">
-              <img id="cael_img" src="./src/img/team-member/cael.png" alt="" class="image">
-            </a>
-            <div class="text_under_content">
-              <h3 style="font-size: 14px; margin-left: 7px;">
+          <div class="container_wrapper" id="second_member_box">
+            <div class="box_margin" id="second_member_content">
+              <span class="span_icon">
+                <h8 class="job_position">
+                  Student
+                </h8>
+                <img src="./src/img/icons/developer.svg" alt="developer" style="width: 45px;">
+              </span>
+              <h6 class="team_member_header">
                 Caelan Shoop
-                <p>
-                  Embedded device developer
-                  </br>
-                </br>
-                  Click to view Profile
-                </p>
-              </h3>
+              </h6>
+              <p class="email_address_p">
+                cshoop2018@my.fit.edu
+              </p>
+            </div>
+            <div class="intro_content_hover" id="second_member_hover_content" style="display:none">
+              <a id="cael_link" href="">
+                <img id="cael_img" src="./src/img/team-member/cael.png" alt="." class="image">
+              </a>
+              <div class="text_under_content">
+                <a>
+                  <h3 style="font-size: 14px; margin-left: 7px;">
+                    Caelan Shoop
+                    <p>
+                      Embedded device developer
+                      </br>
+                    </br>
+                      Click to view Profile
+                    </p>
+                  </h3>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="container_wrapper" id="third_member_box">
-          <div class="box_margin" id="third_member_content">
-            <span class="span_icon">
-              <img src="./src/img/icons/developer.svg" alt="developer" style="width: 45px;">
-            </span>
-            <h8 class="team_member_header">
-              Student
-            </h8>
-            <h6 class="team_member_header">
-              Cameron Wright
-            </h6>
-            <p class="email_address_p">
-              cameron2018@my.fit.edu
-            </p>
-          </div>
-          <div class="intro_content_hover" id="third_member_hover_content" style="display:none">
-            <a id="cael_link" href="">
-              <img id="cael_img" src="./src/img/team-member/.png" alt="" class="image">
-            </a>
-            <div class="text_under_content">
-              <h3 style="font-size: 14px; margin-left: 7px;">
+          <div class="container_wrapper" id="third_member_box">
+            <div class="box_margin" id="third_member_content">
+              <span class="span_icon">
+                <h8 class="job_position">
+                  Student
+                </h8>
+                <img src="./src/img/icons/developer.svg" alt="developer" style="width: 45px;">
+              </span>
+              <h6 class="team_member_header">
                 Cameron Wright
-                <p>
-                  Software consultant, tester
-                  </br>
-                </br>
-                  Click to view Profile
-                </p>
-              </h3>
+              </h6>
+              <p class="email_address_p">
+                cameron2018@my.fit.edu
+              </p>
+            </div>
+            <div class="intro_content_hover" id="third_member_hover_content" style="display:none">
+              <a id="cael_link" href="">
+                <img id="cam_img" src="./src/img/team-member/.png" alt=" " class="image">
+              </a>
+              <div class="text_under_content">
+                <a>
+                  <h3 style="font-size: 14px; margin-left: 7px;">
+                    Cameron Wright
+                    <p>
+                      Software consultant, tester
+                      </br>
+                    </br>
+                      Click to view Profile
+                    </p>
+                  </h3>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </body>
   <footer>

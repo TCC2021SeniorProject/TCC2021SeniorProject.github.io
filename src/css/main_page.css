@@ -4,12 +4,11 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   width: 100%;
   max-width: 100%;
   background-color: hsla(0, 0%, 90%, 0.882);
   scroll-behavior: smooth;
-  min-width: 774px;
+  min-width: 374px;
   padding-top: 130px;
   margin: 0;
   transition-duration: 0.2s;
@@ -48,7 +47,7 @@ table {
   align-items: center;
   display: inline-block;
   text-decoration: none;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', serif;
   font-size: 25px;
   padding: 10px;
   padding-left: 15px;
@@ -74,7 +73,7 @@ table {
 }
 
 .github_box a:hover {
-  color: hsl(0, 100%, 17%);
+  color: hsl(0, 43%, 41%);
   background-color:#86670000;
   text-shadow:  0px 2px 3px #ffffff;
   transition-duration: 0.3s;
@@ -117,7 +116,7 @@ table {
   margin-bottom: 8%;
   display: block;
   text-align: center;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', serif;
   font-size: 1em;
   width: auto;
 }
@@ -128,7 +127,7 @@ table {
   text-decoration: none;
   font-size: 20px;
   width: fit-content;
-  color: #770000;
+  color: hsl(0, 43%, 41%);
 }
 
 #click_link .status {
@@ -150,31 +149,34 @@ table {
 #download_div {
   display: flexbox;
   margin-top: 10%;
+  padding-left: 1%;
   width: 10%;
+  height: max-content;
   float: right;
   box-shadow: inset 5px 0 5px -5px #29627e;
   color: #29627e;
   text-align: center;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', serif;
   font-size: 1.2em;
 }
+
 .download_link {
-  display: flex;
+  display: inline;
   transition-duration: 1s;
   text-decoration: none;
   font-size: 20px;
   width: 100%;
-  color: #770000;
+  color: hsl(0, 43%, 41%);
 }
 
 .version_p {
   padding-top: 5px;
-  margin-left: 5px;
+  margin-left: 0px;
   font-size: 12px;
   color: hsl(244, 52%, 42%);
 }
 
-.download_link p:hover {
+.download_link .link_title:hover {
   transition-duration: 0.5s;
   text-decoration: none;
   font-size: 20px;
@@ -182,12 +184,39 @@ table {
   text-shadow: #4e4e4e 1px 0 3px;
 }
 
+#mission_statement_section {
+  display: block;
+  position: relative;
+  width: 70%;
+  left: 8.5%;
+  margin-top: 80px;
+}
+
+#mission_statement_title {
+  font-family: 'Bebas Neue', serif;
+  font-size: 25px;
+}
+
+#mission_statement_content {
+  font-family: sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding-left: 5%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  border-width: 2px;
+  border-color: rgba(184, 161, 88, 0.835);
+  border-style: solid;
+  border-radius: 15px;
+  background-color: #f1f1f1;
+}
+
 #second_top_intro {
   display: block;
   margin-top: 8%;
-  width: auto;
+  width: 87.5%;
   text-align: center;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', serif;
   font-size: 25px;
 }
 
@@ -200,11 +229,18 @@ table {
   margin-top: 0%;
 }
 
+
+#intro_div {
+  margin-left: 15;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .content_section {
   display: block;
   margin-top: 2%;
-  margin-left: 10%;
-  width: 70%;
+  margin-left: 12%;
+  width: 72%;
   flex-direction: column;
   z-index: 3; /*Add this*/
 }
@@ -212,24 +248,47 @@ table {
 .box_repeater {
   display: grid;
   grid-template-columns: repeat(4, calc(25% - 13.5px));
-  grid-gap: 25px;
+  grid-gap: 5%;
+  margin-left: 10%;
 }
 
 .container_wrapper {
-  display: block;
+  display: grid;
+  height: 250px;
   width: 100%;
   box-sizing: border-box;
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: #FFFFFF;
   box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4);
   transition-duration: 0.3s;
 }
 
-.container_wrapper:hover, .span_icon  {
-  display: flex;
+.container_wrapper:hover, .span_icon {
+  display: grid;
   transition-duration: 0.3s;
   color: #fff;
   background-color: rgba(184, 161, 88, 0.835);
+}
+
+.span_icon {
+  display: flex;
+  width: 100%;
+  height: 35px;
+  background-color: rgba(184, 161, 88, 0.835);
+  border-radius: 5px;
+
+}
+
+.span_icon img {
+  display: inherit;
+  position: relative;
+  width: 90%;
+  height: 35px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: hsl(0, 0%, 100%);
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(53%);
+  border-radius: 0px 5px 5px 0px;
 }
 
 #sponser_box {
@@ -239,19 +298,26 @@ table {
 /* Introduction & Contact boxe specifics */
 
 #intro_div {
+  display: flexbox;
   margin-top: 3%;
 }
 
-#intro_div .span_icon img {
-  margin-top: 15px;
-  margin-left: 5%;
-  filter: invert(52%) sepia(0%) saturate(0%) hue-rotate(161deg) brightness(89%) contrast(83%);
+.job_position {
+  display: block;
+  position: inherit;
+  width: 100%;
+  font-size: 1.3em;
+  font-family: 'Fjalla One', sans-serif;
+  height: 30px;
+  padding-top: 2%;
+  padding-left: 14%;
 }
 
 .team_member_header {
   font-size: 15px;
   font-family: 'Fjalla One', sans-serif;
   margin-left: 5px;
+  height: 20px;
 }
 
 .email_address_p {
@@ -271,16 +337,25 @@ table {
 }
 
 .intro_content_hover {
-  display: block;
+  display: inline-block;
   position: relative;
   width: 100%;
 }
 
-.text_under_content a, .text_under_content h3 {
+.intro_content_hover a{
+  text-decoration: none;
+}
+
+.text_under_content a {
   display: block;
-  position: relative;
+  position: absolute;
   width: 100%;
   color: white;
+  text-shadow: #808080 1px 2px;
+}
+
+.text_under_content a h3 {
+  padding-top: 10px;
 }
 
 .text_under_content h3 p, .text_under_content h3 a {
@@ -291,34 +366,52 @@ table {
 
 #sponsor_img {
   position: absolute;
+  left: 0;
+  top: 0;
   width: auto;
   height: 100%;
   object-fit: cover;
   max-width: 70%;
-  margin-left: 25%;
+  margin-left: 15%;
   border-radius: 70% 50% 70% 50%;
   opacity: 0.4;
 }
 
 #baek_img {
   position: absolute;
+  left: 0;
+  top: 0;
   width: auto;
   height: 100%;
   object-fit: cover;
   max-width: 70%;
-  margin-left: 20%;
+  margin-left: 15%;
   border-radius: 50%;
   opacity: 0.4;
 }
 
 #cael_img {
   position: absolute;
+  left: 0;
+  top: 0;
   width: auto;
   height: 100%;
   object-fit: cover;
   max-width: 70%;
-  margin-left: 20%;
-  margin-top: 0%;
+  margin-left: 15%;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+#cam_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  max-width: 70%;
+  margin-left: 15%;
   border-radius: 50%;
   opacity: 0.4;
 }
