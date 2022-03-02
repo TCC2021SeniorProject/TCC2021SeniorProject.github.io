@@ -1,12 +1,11 @@
 
 .canvas {
-    padding-left: 0%;
-    margin-top: 5%;
+    display: block;
     position: relative;
     width: 85%;
     height: 50%;
     background-color: hsla(0, 0%, 96%, 0.609);
-    box-shadow: inset 0px 0px 15px 25px hsla(0, 0%, 90%, 0.882);
+    box-shadow: inset 0 0 15px 25px hsla(0, 0%, 90%, 0.882);
     z-index: 1;
 }
 
@@ -14,7 +13,6 @@
     position: absolute;
     height: 45px;
     width: 45px;
-    border: 1px solid;
     border-color: hsl(0, 54%, 33%);
     border-style: dashed;
     border-width: 3px;
@@ -55,9 +53,7 @@
 }
 
 svg {
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
+
 }
 
 .line {
@@ -83,51 +79,51 @@ svg {
     color: hsl(310, 75%, 27%);
 }
 
-#outer_circle_1,
-#text_box_1 {
+div#outer_circle_1,
+p#text_box_1 {
     top : 30%;
     left: 5%;
 }
 
-#outer_circle_2,
-#text_box_2 {
+div#outer_circle_2,
+p#text_box_2 {
     top : 20%;
     left: 15%;
     font-size: 10px;
 }
 
-#outer_circle_3,
-#text_box_3 {
+div#outer_circle_3,
+p#text_box_3 {
     top : 50%;
     left: 30%;
 }
 
-#outer_circle_4,
-#text_box_4 {
+div#outer_circle_4,
+p#text_box_4 {
     top : 10%;
     left: 40%;
 }
 
-#outer_circle_5,
-#text_box_5 {
+div#outer_circle_5,
+p#text_box_5 {
     top : 70%;
     left: 50%;
     font-size: 8px;
 }
 
-#outer_circle_6,
-#text_box_6 {
+div#outer_circle_6,
+p#text_box_6 {
     top : 45%;
     left: 70%;
 }
 
-#outer_circle_7,
-#text_box_7 {
+div#outer_circle_7,
+p#text_box_7 {
     top : 45%;
     left: 90%;
 }
 
-#circle_1, #circle_7 {
+div#circle_1, div#circle_7 {
     background-color: rgb(255, 127, 127);
 }
 
@@ -172,4 +168,15 @@ svg {
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
     color: white;
+}
+
+/* Wide Screen view */
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+
+}
+
+
+/* Mobile view */
+@media only screen and (max-width: 768px) {
+
 }

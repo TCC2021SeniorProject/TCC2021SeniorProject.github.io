@@ -1,66 +1,61 @@
-function navbarReaction(minimum_window) {
-    const SCROLL_BOUNDARY = 350;
-    var currentFontSize = calculateFontSize();//vw
+function navbarReaction() {
+    const SCROLL_BOUNDARY = 120;
+    let currentFontSize = calculateFontSize();//vw
     $(window).scroll(function() {
-        $('#nav_bar_icon img').css('transition-duration', '0.8s');
-        var winScrollTop = $(window).scrollTop();
+        let nav_bar_img = $('.nav_bar_icon img');
+        let nav_bar = $('#nav_bar');
+        let nav_bar_link = $('#nav_bar_link');
+        let right_nav_items = $('.right_nav_items');
+
+        nav_bar_img.css('transition-duration', '0.8s');
+        let winScrollTop = $(window).scrollTop();
+
         //Top of the page
-        if (winScrollTop <= 15 && !minimum_window) { //set initial size
-            $('#nav_bar_icon img').css({
+        if (winScrollTop <= 15) { //set initial size
+
+            nav_bar_img.css({
                 'width': 70 + 'px',
-                'transition-duration': 0.5 + 's'
+                'height': 70 + 'px',
+                'margin-top': 2 + 'em',
             });
 
-            $('#nav_bar').css({
-                height: 150
+            nav_bar.css({
+                height: 160
             });
 
-            $('#nav_head_title').css({
+            nav_bar_link.css({
                 opacity: 1
             });
 
-        } else if (winScrollTop < SCROLL_BOUNDARY && winScrollTop > 5 && !minimum_window) { //set dynamic size
-            var fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
-            //set font
-            $('#nav_title').css({
-                'font-size': fontSizeValue + 'vw'
+            right_nav_items.css({
+                opacity: 1
             });
 
-            $('#nav_bar_icon img').css({
-            'width': 60 + 'px'
+        } else if (winScrollTop < SCROLL_BOUNDARY && 15 < winScrollTop) { //set dynamic size
+            console.log("middle");
+            let fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
+            nav_bar_img.css({
+                'width': 30 + 'px',
+                'height': 30 + 'px',
+                'margin-top': 0.2 + 'em',
             });
 
-            //set nav bar height size on scroll
-            var newHeight = calculateHeightToSet(winScrollTop, 160);
-            $('#nav_bar').css({
-            height: newHeight
+            let newHeight = calculateHeightToSet(winScrollTop, 160);
+            console.log(newHeight);
+            nav_bar.css({
+                height: newHeight
             });
+
 
             //set opacity on scroll
-            opacityValue = calculateOpacityValue(winScrollTop, 220);
+            let opacityValue = calculateOpacityValue(winScrollTop, 160);
 
-            $('#nav_head_title').css({
-            opacity: opacityValue
+            nav_bar_link.css({
+                opacity: opacityValue - 0.3
             });
 
-        } else if (!minimum_window) { //set minimum size
-            var fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
-            $('#nav_bar_icon img').css({
-            'width': 50 + 'px'
-            });
-
-            $('#nav_bar').css({
-            height: 60
-            });
-
-            $('#nav_head_title').css({
-            opacity: 0
-            });
-
-            var fontSizeValue = getCurrentFontSize(SCROLL_BOUNDARY, currentFontSize);
-
-            $('#nav_title').css({
-                'font-size': fontSizeValue + 'vw'
+            right_nav_items.css({
+                opacity: opacityValue - 0.3
             });
         }
     });
@@ -68,29 +63,26 @@ function navbarReaction(minimum_window) {
 
 //Calculates nav bar height
 function calculateHeightToSet(currentScroll, scrollBoundary) {
-    var finalHeight = (scrollBoundary) - (currentScroll) * (9 / 10);
-    return finalHeight;
+    return (scrollBoundary) - (currentScroll) * (9 / 10);
 }
 
 //Calculates nav bar opacity
 function calculateOpacityValue(currentScroll, scrollBoundary) {
-    var opacityValue = 0.6 - (currentScroll / scrollBoundary);
-    return opacityValue;
+    return 0.6 - (currentScroll / scrollBoundary);
 }
 
 //calculate font size: font from 1vw ~ 1.5vw
 //current scroll in px
 function getCurrentFontSize(currentScroll, currentFontSize) {
     //vm to px
-    var variationRnage = 0.5 / (100/($(window).width()));
+    let variationRange = 0.5 / (100/($(window).width()));
     //all in px
-    var finalValue = ((1 / currentScroll) * variationRnage) + (currentFontSize * 2 / 3);
-    return finalValue;
+    return ((1 / currentScroll) * variationRange) + (currentFontSize * 2 / 3);
 }
 
 function calculateFontSize() {
     //px
-    var currentFontSize = $('.right_nav_items a').css('font-size');
+    let currentFontSize = $('.right_nav_items a').css('font-size');
     //get only the digits
     currentFontSize = parseInt(currentFontSize, 10);
     //change px in vw suffix
@@ -98,62 +90,4 @@ function calculateFontSize() {
     return currentFontSize;
 }
 
-$(function() {
-    const MINIMUM_WINDOW_WIDTH = 800;
-
-    var initialWidth = $( window ).width();
-    if (initialWidth < MINIMUM_WINDOW_WIDTH) {
-        minimum_window = true;
-        miniSize();
-      } else if ($(this).width() >= MINIMUM_WINDOW_WIDTH) {
-        minimum_window = false;
-      }
-
-    function miniSize() {
-        $('#nav_bar').css({
-            'text-align': 'center',
-            'height': 50 + 'px',
-        });
-
-        $('#nav_bar_link').css({
-            'display': 'none',
-        });
-
-        $('#nav_bar_icon').css({
-            'display': 'none',
-        });
-
-        $('#nav_head_title').css({
-            "width": 50 + '%',
-        });
-
-        $('.right_nav_items').css({
-            "width": 50 + '%',
-        });
-
-        $('.right_nav_items a').css({
-            'font-size': 0.8 + 'em'
-        });
-
-    }
-
-    navbarReaction(minimum_window);
-
-    $(window).resize(function() {
-        //reload attritubes on resize
-        if ($(this).width() < MINIMUM_WINDOW_WIDTH) {
-            console.log("minsize")
-            minimum_window = true;
-            setTimeout(function(){
-                window.location.reload();
-              },1);
-            miniSize();
-        } else {
-            console.log("maxsize")
-            minimum_window = false;
-            setTimeout(function(){
-                window.location.reload();
-            },1);
-        }
-    });
-});
+navbarReaction();

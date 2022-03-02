@@ -1,21 +1,11 @@
-function navBarIconHover() {
-  $('#nav_bar_icon img').hover(function() {
-    $('#nav_bar_icon img').css('transition-duration', '1.5s');
-    $('#nav_bar_icon img').css('transform', 'rotate(-360deg)');
-  }, function() {
-    $('#nav_bar_icon img').css('transition-duration', '1.5s');
-    $('#nav_bar_icon img').css('transform', 'rotate(0deg)');
-  });
-}
-
 function boxContentHandler() {
   //sponsor box hover
-  $('#sponser_box').hover(function() {
-    $('#sponser_content').css('display', 'none');
-    $('#sponser_hover_content').css('display', 'inline-block');
+  $('#sponsor_box').hover(function() {
+    $('#sponsor_content').css('display', 'none');
+    $('#sponsor_hover_content').css('display', 'inline-block');
   }, function() {
-    $('#sponser_content').css('display', 'inline-block');
-    $('#sponser_hover_content').css('display', 'none');
+    $('#sponsor_content').css('display', 'inline-block');
+    $('#sponsor_hover_content').css('display', 'none');
   });
 
   //First member box hover
@@ -49,43 +39,36 @@ function boxContentHandler() {
 //Set initial webpage setting on load
 $(function() {
   const MINIMUM_WINDOW_WIDTH = 800;
-  var max_window_trigger = false;
+  let max_window_trigger = false;
 
   //viewpoint width
-  var window_w = 100 + "%";
-  var mobile_w =  window.innerWidth;
+  let mobile_w =  window.innerWidth;
 
   //body
-  var body = $('body');
-
-  //Github logo
-  var github_button = $('.github_box a');
-  var github_image = $('.github_box img');
+  let body = $('body');
 
   //intro cards
-  var intro_div = $('#intro_div')
-  var box_repeater = $('.box_repeater');
-  var box_container_wrap = $('.container_wrapper');
-  var box_email_text = $('.email_address_p');
-  var box_icons = $('.span_icon img');
-  var initialWidth = $( window ).width();
+  let intro_div = $('#intro_div')
+  let box_repeater = $('.box_repeater');
+  let box_container_wrap = $('.container_wrapper');
+  let box_email_text = $('.email_address_p');
+  let box_icons = $('.span_icon img');
+  let initialWidth = $( window ).width();
 
   //animation section
-  var canvas = $('#canvas')
+  let canvas = $('#canvas')
 
   //semester boxes
-  var main_section = $('#main_section');
-  var semester_section = $('.semester_section');
-  var row_box_div = $('.row_box_div');
-  var subject_span_icon = $('.subject_span_icon');
-  var sub_header_div = $('.sub_header_div');
-  var subject_and_time = $('.subject_and_time');
-  var ul_first_semester_plan_list = $('.ul_first_semester_plan_list');
-  var semester_box_repeater = $('.semester_box_repeater');
-  var box_button_text = $('.div_li_first_semester_plan_list_item a');
-  var footer_legal = $('.footer_legal');
-
-  navBarIconHover();
+  let main_section = $('#main_section');
+  let semester_section = $('.semester_section');
+  let row_box_div = $('.row_box_div');
+  let subject_span_icon = $('.subject_span_icon');
+  let sub_header_div = $('.sub_header_div');
+  let subject_and_time = $('.subject_and_time');
+  let ul_first_semester_plan_list = $('.ul_first_semester_plan_list');
+  let semester_box_repeater = $('.semester_box_repeater');
+  let box_button_text = $('.div_li_first_semester_plan_list_item a');
+  let footer_legal = $('.footer_legal');
 
   boxContentHandler();
 
@@ -97,19 +80,6 @@ $(function() {
 
     canvas.css({
       display: 'none'
-    });
-
-    github_button.css({
-      'margin-bottom': 30 + '%',
-      'padding-left': 5 + 'px',
-      'font-size': 12 + 'px',
-      'padding': 0,
-      'transform': 'rotate(270deg)',
-      'transition-delay' : 0.2 + 's',
-    });
-
-    github_image.css({
-      'width' : 25 + 'px',
     });
 
     $('#download_div').css({
@@ -128,14 +98,12 @@ $(function() {
 
     box_repeater.css({
       'grid-template-columns' : 'repeat(1, calc(100%)',
-      'width' : mobile_w,
-      'margin-left': 22 + '%',
     });
 
     box_container_wrap.css({
       'min-width': 'none',
       'width': 60 + '%',
-      'height' : 210 + 'px'
+      'height' : 400 + 'px'
     });
 
     box_email_text.css({
@@ -171,16 +139,6 @@ $(function() {
       'text-align' : 'center',
     });
 
-    ul_first_semester_plan_list.css({
-      'height' : 'auto',
-      'display' : "block",
-    });
-
-    semester_box_repeater.css({
-      'grid-template-columns': 'repeat(2)',
-      'margin-left': 17 + '%'
-    });
-
     box_button_text.css({
       'font-size': 12 + 'px'
     });
@@ -203,7 +161,7 @@ $(function() {
   }
 
   $(window).resize(function() {
-    //reload attritubes on resize
+    //reload attributes on resize
     if ($(this).width() < MINIMUM_WINDOW_WIDTH && max_window_trigger) {
       max_window_trigger = false;
       max_window_trigger = true;

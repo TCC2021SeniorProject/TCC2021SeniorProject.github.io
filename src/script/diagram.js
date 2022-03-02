@@ -1,5 +1,4 @@
 //Used jquery
-
 const STRAIGHT_ANGLE = 640;
 const CIRCLE_ROTATION_SPEED = 20;
 const FASTER_CIRCLE_ROTATION_SPEED = 80;
@@ -8,55 +7,54 @@ const LINE_PADDING_VALUE = 7;
 const BACKWARD_MULTIPLIER = 19;
 
 function isZooming() {
-    var newPx_ratio = window.devicePixelRatio
+    let newPx_ratio = window.devicePixelRatio
      || window.screen.availWidth
       / document.documentElement.clientWidth;
-    if (newPx_ratio != px_ratio) {
-       px_ratio = newPx_ratio;
-       return true;
+    let px_ratio;
+    if (newPx_ratio !== px_ratio) {
+        px_ratio = newPx_ratio;
+        return true;
     } else {
-       return false;
+        return false;
     }
  }
 
  function rotate_single(circle, faster) {
-    var counter = 0;
-    var interval_obj = setInterval(function() {
+    let counter = 0;
+    return setInterval(function () {
         if (counter >= STRAIGHT_ANGLE) {
             counter = 0;
         }
         $(circle).css({
             'transform': 'rotate('
-              + counter * DEGREE_SHIFT + 'deg)'
+                + counter * DEGREE_SHIFT + 'deg)'
         });
         counter++;
     }, (faster) ? FASTER_CIRCLE_ROTATION_SPEED
-         : CIRCLE_ROTATION_SPEED );
-    return interval_obj;
+        : CIRCLE_ROTATION_SPEED);
 }
 
 
 function rotate(outer_circles, faster) {
-    var counter = 0;
-    var interval_obj = setInterval(function() {
+    let counter = 0;
+    return setInterval(function () {
         if (counter >= STRAIGHT_ANGLE) {
             counter = 0;
         }
         $(outer_circles).css({
             'transform': 'rotate('
-              + counter * DEGREE_SHIFT + 'deg)'
+                + counter * DEGREE_SHIFT + 'deg)'
         });
         counter++;
     }, (faster) ? FASTER_CIRCLE_ROTATION_SPEED
-         : CIRCLE_ROTATION_SPEED );
-    return interval_obj;
+        : CIRCLE_ROTATION_SPEED);
 }
 
 //returns center points
 function getOffset(element) {
-    var position = $(element).position();
-    var xSize = $(element).width();
-    var ySize = $(element).height();
+    const position = $(element).position();
+    const xSize = $(element).width();
+    const ySize = $(element).height();
     return {
         x: position.left + xSize / 2,
         y: position.top + ySize / 2
@@ -64,10 +62,10 @@ function getOffset(element) {
 }
 
 function getTheta(x1, y1, x2, y2) {
-    var value = -(y2 - y1) / (x2 - x1);
-    if ((x2 - x1) == 0) {
+    const value = -(y2 - y1) / (x2 - x1);
+    if ((x2 - x1) === 0) {
         return Math.atan(-180);
-    } else if ((y2 - y1) == 0) {
+    } else if ((y2 - y1) === 0) {
         return Math.atan(0);
     }
     return Math.atan(-(y2 - y1) / (x2 - x1));
@@ -117,20 +115,22 @@ function getRadiusOfCircle(circle) {
 
 //Get coordinations of the points
 function getCoordinations(startCir, endCir) {
-    var startCenter = getOffset(startCir);
-    var endCenter = getOffset(endCir);
+    let endPos;
+    let startPos;
+    const startCenter = getOffset(startCir);
+    const endCenter = getOffset(endCir);
 
-    var theta = getTheta(startCenter.x, startCenter.y,
+    const theta = getTheta(startCenter.x, startCenter.y,
         endCenter.x, endCenter.y);
-    var r = getRadiusOfCircle(startCir);
+    const r = getRadiusOfCircle(startCir);
 
     //right-ward direction
     if (startCenter.x <= endCenter.x) {
-        var startPos = getStartPos(startCenter.x, startCenter.y, r, theta);
-        var endPos = getEndPos(endCenter.x, endCenter.y, r, theta);
+        startPos = getStartPos(startCenter.x, startCenter.y, r, theta);
+        endPos = getEndPos(endCenter.x, endCenter.y, r, theta);
     } else { //left-ward direction
-        var startPos = getStartPosOpposite(startCenter.x, startCenter.y, r, theta);
-        var endPos = getEndPosOpposite(endCenter.x, endCenter.y, r, theta);
+        startPos = getStartPosOpposite(startCenter.x, startCenter.y, r, theta);
+        endPos = getEndPosOpposite(endCenter.x, endCenter.y, r, theta);
     }
     return {
         startPos,
@@ -141,29 +141,29 @@ function getCoordinations(startCir, endCir) {
 
 
 function getMidPoint(startPos, endPos, transition_text) {
-    var width = $(transition_text).width();
-    var height = $(transition_text).height();
-    var midPointX = startPos.left + ((endPos.left - startPos.left) / 2) - width / 2;
-    var midPointY = startPos.top + ((endPos.top - startPos.top) / 2) - height / 1.8;
+    const width = $(transition_text).width();
+    const height = $(transition_text).height();
+    const midPointX = startPos.left + ((endPos.left - startPos.left) / 2) - width / 2;
+    const midPointY = startPos.top + ((endPos.top - startPos.top) / 2) - height / 1.8;
     return {
         midPointX,
         midPointY,
     }
 }
 
-function setTransTextPos (coordinations, transition_texts) {
-    var midPoints = []
-    var tilt_list = []
-    for (let index = 0; index < coordinations.length; index++) {
-        var startP = coordinations[index].startPos;
-        var endP = coordinations[index].endPos;
+function setTransTextPos (coordination, transition_texts) {
+    const midPoints = [];
+    const tilt_list = [];
+    for (let index = 0; index < coordination.length; index++) {
+        const startP = coordination[index].startPos;
+        const endP = coordination[index].endPos;
         midPoints.push(getMidPoint(startP, endP, transition_texts[index]));
         if (startP != null && endP != null) {
             tilt_list.push(getTheta(startP.left, startP.top, endP.left, endP.top));
         }
     }
 
-    for (let index = 0; index < coordinations.length; index++) {
+    for (let index = 0; index < coordination.length; index++) {
         $(transition_texts[index]).css("left", midPoints[index].midPointX);
         $(transition_texts[index]).css("top", midPoints[index].midPointY);
         $(transition_texts[index]).css('transform', 'rotate(' + -tilt_list[index] + 'rad)');
@@ -173,10 +173,10 @@ function setTransTextPos (coordinations, transition_texts) {
 //Origin point of y starts from the top not the bottom
 function drawLine(startPos, endPos, line) {
 
-    var start_x = startPos.left;
-    var start_y = startPos.top;
-    var end_x = endPos.left;
-    var end_y = endPos.top;
+    const start_x = startPos.left;
+    const start_y = startPos.top;
+    const end_x = endPos.left;
+    const end_y = endPos.top;
 
     $(line).attr("x1", start_x);
     $(line).attr("y1", start_y);
@@ -185,16 +185,17 @@ function drawLine(startPos, endPos, line) {
 }
 
 function initialize_and_draw_line(circles, lines) {
-    var coordination = []
+    let coord;
+    const coordination = [];
     //Draw lines between each node
     let i = 0;
     for (i = 0;i < circles.length - 1; i++) {
-        var coord = getCoordinations(circles[i], circles[i + 1]);
+        coord = getCoordinations(circles[i], circles[i + 1]);
         drawLine(coord.startPos, coord.endPos, lines[i]);
         coordination.push(coord);
     }
     //line 7: index 6
-    var coord = getCoordinations(circles[2], circles[0]);
+    coord = getCoordinations(circles[2], circles[0]);
     drawLine(coord.startPos, coord.endPos, lines[++i]);
     coordination.push(coord);
     //line 8: index 7
@@ -209,7 +210,7 @@ function initialize_and_draw_line(circles, lines) {
 }
 
 function change_circle_color_on_hover() {
-    var rotate_obj;
+    let rotate_obj;
     $('#text_box_1').hover(function() {
         $('#circle_1 .inner_circle').css('background-color', 'rgb(116, 57, 57)');
         $('#text_box_1').css('color', 'rgba(219, 107, 107, 0.918)');
@@ -290,18 +291,17 @@ function change_circle_color_on_hover() {
 
 
 $(function() {
-    var outer_circles = $('.outer_circle');
-    var lines = $('.line');
+    const outer_circles = $('.outer_circle');
+    const lines = $('.line');
 
     //setup gradual points
-    var coordinations = initialize_and_draw_line(outer_circles, lines);
+    const coordination = initialize_and_draw_line(outer_circles, lines);
 
-    var rotate_obj = rotate(outer_circles, false);
+    const rotate_obj = rotate(outer_circles, false);
     //clearInterval(rotate_obj);
 
     change_circle_color_on_hover();
 
-    var transition_texts = $('.transition_text');
-    setTransTextPos(coordinations, transition_texts);
-
+    const transition_texts = $('.transition_text');
+    setTransTextPos(coordination, transition_texts);
 });
