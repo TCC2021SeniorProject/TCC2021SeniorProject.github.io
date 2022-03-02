@@ -138,29 +138,31 @@ input#active:checked ~ .right_nav_items{
 }
 
 input#active:checked ~ .menu-btn{
-  color: #fff;
+  color: #f1f1f1;
+  content: url("../img/icons/close-circle.png");
 }
 
 input[type="checkbox"]{
   display: none;
 }
 
-.menu-btn{
+label.menu-btn{
   position: fixed;
-  z-index: 2;
-  right: 20px;
+  z-index: 1;
+  right: 25px;
   /* left: 20px; */
-  top: 20px;
-  height: 50px;
-  width: 50px;
+  top: 25px;
+  height: 40px;
+  width: 40px;
   text-align: center;
   line-height: 50px;
   border-radius: 50%;
   font-size: 20px;
   color: #ffffff;
   cursor: pointer;
-  background-image: url("../img/icons/Hamburger_icon.png");
   transition: all 0.3s ease-in-out;
+  content: url("../img/icons/Hamburger_icon.png");
+  filter: grayscale(1) invert(1);
 }
 
 div.right_nav_items ul {
