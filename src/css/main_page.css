@@ -140,9 +140,6 @@ input#active:checked ~ .right_nav_items{
 input#active:checked ~ .menu-btn{
   color: #fff;
 }
-input#active:checked ~ .menu-btn i:before{
-  content: "\f00d";
-}
 
 input[type="checkbox"]{
   display: none;
@@ -160,9 +157,9 @@ input[type="checkbox"]{
   line-height: 50px;
   border-radius: 50%;
   font-size: 20px;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
-  background: #000000;
+  background-image: url("../img/icons/Hamburger_icon.png");
   transition: all 0.3s ease-in-out;
 }
 
