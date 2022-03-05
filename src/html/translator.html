@@ -1,0 +1,101 @@
+<!--  This file only works on Java Spring Application  -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translator</title>
+    <link rel="stylesheet" href="../css/translator.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../script/translator.js" defer> </script>
+    <script type="text/javascript" src="../script/navbar.js" defer> </script>
+</head>
+<body>
+<!-- Navigation bar -->
+<header id="top">
+    <nav id="nav_bar">
+        <div id="nav_bar_top_wrapper">
+            <a class="nav_bar_icon" href="https://tcc2021seniorproject.github.io/">
+                <img src="../img/icons/basic_logo.ico" alt="" class="image">
+            </a>
+            <a id="nav_bar_link" href="https://tcc2021seniorproject.github.io/">
+                <p class="nav_title">Florida Tech Senior Project</p>
+            </a>
+            <div class="right_nav_items">
+                <ul>
+                    <li class="nav_item">
+                        <a href="https://tcc2021seniorproject.github.io/src/html/about.html">
+                            <p>About</p>
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="https://tcc2021seniorproject.github.io/src/html/poster.html">
+                            <p>Poster</p>
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="https://tcc2021seniorproject.github.io/src/html/ebook.html">
+                            <p>E-Book Manual</p>
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="https://tcc2021seniorproject.github.io/src/html/milestones.html">
+                            <p>Milestone</p>
+                        </a>
+                    </li>
+                    <li class="nav_item" id="translator_button">
+                        <a href="http://18.188.79.185:8080/">
+                            <p>Translator</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="page_container">
+    <div id="submission_control">
+        <form id="upload_form" action="/uploadMultiFile" method="post" enctype="multipart/form-data">
+            <label class="xmlLabel" for="xmlFile">
+                UPPAAL XML file
+                <input type="file" id="xmlFile" name="xmlFile" accept="xml, txt"><br><br>
+            </label>
+            <label class="execLabel">
+                Executable python file (optional)
+                <input type="file" class="execFile" name="execFile" accept="py, txt"><br><br>
+            </label>
+            <div class="button_wrapper">
+                <input id="add_button" type="button" value="+" onclick="addRow()">
+                <input id="remove_button" type="button" value="-" onclick="removeRow()">
+            </div>
+            <div class="submit_wrapper">
+                <input title="Upload file before" id="submit_button" type="submit" value="Translate">
+                <div id="system_message">
+                    <p th:text="${system_message}" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <form id="script_view_form" action="/viewScript" method="get">
+        <input title="Do this after file submit" id="view_button" type="submit" value="View script">
+    </form>
+
+    <p id="view_label"> Output Result </p>
+    <div id="script_view">
+        <span id="empty_content" style="white-space: pre-wrap;">
+            <p th:text="${script_content}" />
+        </span>
+    </div>
+
+    <footer>
+        <div class="footer_legal">
+            <p>
+                2021 Model Based IoT<br><br>
+                Website Hosted on GitHub Server<br><br>
+                Designed by Tony Baek
+            </p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

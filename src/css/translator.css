@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* This file only works on Java Spring Application */
+
 
 html {
     scroll-behavior: smooth;
@@ -12,12 +12,19 @@ body {
     background-color: #f1f1f1;
     scroll-behavior: smooth;
     padding-top: 100px;
-    margin: 0;
+    margin: 10% 0 0 0;
     transition-duration: 0.2s;
+    height: 1000px;
 }
 
 header {
     position: relative;
+}
+
+div#page_container {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 180px;
 }
 
 /*            Github link section            */
@@ -191,6 +198,7 @@ li.nav_item p {
 li#translator_button a {
     color: #A49C5B;
     font-size: 20px;
+    height: 35px;
 }
 
 li#translator_button a:hover {
@@ -203,263 +211,175 @@ li.nav_item:hover , li.nav_item a:hover {
     cursor: pointer;
     color: #ffffff;
 }
+/* End of nav bar attribute */
 
-/* End of nav */
-
-
-section {
-    margin-bottom: 5%;
-    width: 100%;
-}
-
-footer {
-    width: 100%;
-    margin-bottom: 0;
-}
-
-table {
-    width: 60%;
-    text-align: center;
-    border: 1px solid black;
-}
-
-table {
-  width: 60%;
-  text-align: center;
-  border: 1px solid black;
-}
-
-#header_div {
-    width: 100%;
-    margin-top: 5%;
-    text-align: center;
-    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
-    color: hsl(0, 43%, 41%);
-    font-size: 2.5rem;
-}
-
-#main_section {
+/* File selector section */
+div#submission_control {
+    display: block;
     position: relative;
-    width: 70%;
-    margin: 0 auto 0 auto;
-}
-
-.semester_section{
-    position: relative;
-    z-index: 2;
-}
-
-.box_margin_hover{
-    position: fixed;
-}
-
-.div_line {
-    width: 100%;
-    border: 6px solid #b9b9b9;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    z-index: 2;
-}
-
-.content_section_aside {
-    display: contents;
-    position: relative;
-}
-
-  /*               Semester boxes                */
-
-  h2.sub_header {
-    text-align: left;
-    font-size: 2.2rem;
     font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
-    text-transform: uppercase;
-    width: 69%;
-    margin-left: 15.5%;
-    padding-left: 1%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    line-height: 30px;
-    margin-bottom: 0;
-    color: #ffffff;
-    background: #9a4343;
-  }
+    font-weight: 500;
+}
 
-  .semester_box_repeater {
-    width: 70%;
-    margin-left: 15.5%;
-    background-color: #FFFFFF;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .row_box_div {
-    display: flex;
-    height: 100px;
-  }
-
-  div.box_subject {
-    position: relative;
-    flex: 1;
-    border-bottom: 3px solid #b9b9b9;
-  }
-
-  .semester_box_repeater {
-    box-shadow: 0 5px 20px 0 #0a0a0a;
-  }
-
-  #milestone1_box {
-    border-bottom: none;
-  }
-
-  #milestone5_box {
-    border-bottom: none;
-  }
-
-  #milestone6_box {
-    border-bottom: none;
-  }
-
- .subject_span_icon {
-    margin-top: 15px;
-    filter: invert(51%) sepia(19%) saturate(360%) hue-rotate(169deg) brightness(100%) contrast(90%);
-  }
-
-  .ul_first_semester_plan_list{
+label.xmlLabel, label.execLabel {
+    display: block;
     width: 100%;
-    display: flex;
-    padding-left: 0;
-  }
-
-  .subject_span_icon {
-    clear: both;
-    width: 15%;
-    line-height: 0;
-    padding-left: 15px;
-  }
-
-  h5.subject_and_time {
-    width: 18%;
-    font-size: 0.9rem;
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
-    min-width: 18%;
-    margin-left: 1%;
-    margin-bottom: 0;
-  }
-
-  .div_li_first_semester_plan_list {
-    display: flex;
-    flex: 0 1 auto; /* Default */
-    text-decoration: none;
-    list-style: none;
-    width: 100%;
-  }
-
-
-  .div_li_first_semester_plan_list_item {
-    width: 100%;
-    height: 70px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-.div_li_first_semester_plan_list_item a {
-    z-index: 2;
-    min-height: 25px;
-    padding: 20px 10px 15px 10px;
     text-align: center;
-    display: inherit;
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
-    border: 5px solid hsl(0, 43%, 41%);
-    color: #666666;
-    font-weight: 600;
-    background-color: #ffffff;
-    transition-duration: 0.4s;
+}
+
+input#xmlFile {
+    margin-left: 8.3em;
+}
+
+input.execFile {
+    color: #222222;
+}
+
+input#xmlFile::file-selector-button {
+    background-color: #963c3c;
+    border: #f1f1f1 none;
     border-radius: 10px;
+    color: #f1f1f1;
+    height: 35px;
+    width: 100px;
+    margin-right: 2em;
 }
 
-.div_li_first_semester_plan_list_item a:hover {
-    color: #ffffff;
-    background-color: hsl(0, 43%, 41%);
-    transition-duration: 0.4s;
+input.execFile::file-selector-button {
+    background-color: #A49C5B;
+    border: #f1f1f1 none;
+    border-radius: 10px;
+    color: #f1f1f1;
+    height: 35px;
+    width: 100px;
+    margin-right: 2em;
 }
 
-.box_vertical_line {
+input#xmlFile::file-selector-button:hover {
+    background-color: #8f2a2a;
+}
+
+input.execFile::file-selector-button:hover {
+    background-color: #948d48;
+}
+
+/* file feature section */
+
+div.button_wrapper {
+    display: block;
+    text-align: center;
+    padding-left: 20em;
+}
+
+input#add_button {
+    display: inline;
     position: relative;
-    width: 12px;
-    height: 100%;
-    margin: 0 auto 0 0;
-    box-sizing: border-box;
-    pointer-events: initial;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #ffffff;
-    background-color: hsl(0, 43%, 41%);
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
+    width: 35px;
+    height: 35px;
+    background-color: #b9b9b9;
+    border: none;
+    border-radius: 5px;
 }
 
-  /*           Button Progress attributes           */
-
-.in_progress a {
-    animation: changeColor1 10s infinite;
-  }
-
-.in_progress a:hover {
-    color: #0a0a0a;
-    background-color: #ffffff;
-    animation: changeColor1 10s infinite;
+input#add_button:hover {
+    background-color: #838383;
 }
 
-@keyframes changeColor1 {
-    0% {
-      border-color: #8882ff;
-    }
-    10% {
-      border-color: #8882ff;
-    }
-    20% {
-      border-color: #5fffbc;
-    }
-    30% {
-      border-color: #895aff;
-    }
-    40% {
-      border-color: #895aff;
-    }
-    50% {
-      border-color: #9dffd3;
-    }
-    60% {
-      border-color: #895aff;
-    }
-    70% {
-      border-color: #895aff;
-    }
-    80% {
-      border-color: #5fffbc;
-    }
-    90% {
-      border-color: #8882ff;
-    }
-    100% {
-      border-color: #8882ff;
-    }
+input#remove_button {
+    display: inline;
+    position: relative;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
+    width: 35px;
+    height: 35px;
+    background-color: #b9b9b9;
+    border: none;
+    border-radius: 5px;
 }
 
-.not_prepared a {
-    color: hsl(0, 43%, 41%);
-    background-color: hsl(0, 43%, 41%);
+input#remove_button:hover {
+    background-color: #838383;
 }
 
-.content p {
-    font-family: 'Times New Roman', Times, serif;
+
+/* Submit and System section */
+
+div.submit_wrapper {
+    display: flex;
+    margin: 1em 0 0 20%;
+}
+
+input#submit_button {
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 5px;
+    color: #f1f1f1;
+    width: 100px;
+    height: 35px;
+}
+
+/* View button */
+
+input#view_button {
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    color: #f1f1f1;
+    width: 100px;
+    height: 35px;
+}
+
+span#empty_content {
+    min-height: 50vh;
+}
+
+/* Script view */
+form#script_view_form {
+    display: flex;
+    margin: 1em 0 0 20%;
+    position: relative;
+    width: fit-content;
+}
+
+p#view_label {
+    display: block;
+    text-align: center;
+    margin: 2em 20% 0 20%;
+    padding: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
+    font-weight: 500;
+    width: auto;
+    background-color: #9a4343;
+    color: #f1f1f1;
+    border: #9a4343 solid 3px;
+    border-bottom: none;
+}
+
+div#script_view {
+    display: block;
+    position: relative;
+    width: auto;
+    min-width: 20%;
+    height: auto;
+    margin: 0% 20% 5% 20%;
+    background: #ffffff;
+    border-color: #9a4343;
+    border-width: 3px;
+    border-style: solid;
+    padding: 10px;
+}
+
+div#script_view span {
+    display: block;
+    position: relative;
+    width: 100%;
 }
 
 /*              Footer attributes              */
 footer {
-    display: block;
+    position: absolute;
     width: 100%;
     bottom: 0;
-    margin: 0;
 }
 
 div.footer_legal {
@@ -471,7 +391,6 @@ div.footer_legal {
     color: #ffffff;
     background: linear-gradient(0.25turn, #0a0a0a, #181818, #000000);
 }
-
 
 /* Wide Screen view */
 @media only screen and (min-width: 1525px) {
@@ -501,30 +420,7 @@ div.footer_legal {
         font-size: 1.8rem;
     }
 
-    li#current_page {
-        border-radius: 10px;
-        border: 3px solid #b9b9b9;
-        height: 50px;
-        padding: 0 1em 0 1em;
-    }
-
-    li#translator_button a {
-        font-size: 1.8rem;
-    }
-
-    span.subject_span_icon {
-        margin: 0;
-        width: 100px;
-    }
-
-    h5.subject_and_time {
-        font-size: 1.4rem;
-        width: 300px;
-        margin: 0 0 0 0;
-        color: #737373;
-    }
 }
-
 
 /* Mobile view */
 @media only screen and (max-width: 900px) {
@@ -585,11 +481,6 @@ div.footer_legal {
         display: block;
     }
 
-    input#active:checked ~ .right_nav_items{
-        clip-path: circle(75%);
-        height: 500px;
-    }
-
     a#nav_bar_link {
         width: 70%;
     }
@@ -622,15 +513,5 @@ div.footer_legal {
 
     div.right_nav_items li a {
         width: 100%;
-    }
-
-    .subject_span_icon {
-        padding-left: 5px;
-    }
-
-    .div_li_first_semester_plan_list_item a {
-        font-size: 0.8rem;
-        height: 25px;
-        padding: 1em 0 1em 0;
     }
 }
