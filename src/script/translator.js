@@ -37,6 +37,7 @@ function allowSubmit() {
     }
 }
 
+//This will be affective in the future.
 function allowView() {
     console.log("click");
     let view_button = document.querySelector('#view_button');
@@ -52,9 +53,8 @@ function initializeColor() {
     submit_button.disabled = true;
     submit_button.style.backgroundColor ="#2f3c59";
     submit_button.style.color ="#9a9a9a";
-    view_button.disabled = true;
-    view_button.style.backgroundColor ="#252222";
-    view_button.style.color ="#8d8d8d";
+    view_button.style.backgroundColor ="#000000";
+    view_button.style.color ="#ffffff";
 }
 
 initializeColor();

@@ -744,9 +744,17 @@ div#sponsor_box {
         margin-bottom: 7em;
     }
 
+    div.box_wrapper {
+        margin: 0 15% 0 15%;
+    }
+
     div.box_repeater {
-        padding-left: 0;
-        margin: 0 0 0 6em;
         width: 100%;
+        grid-template-columns: repeat(1, calc(50%));
+        grid-gap: 3%;
+    }
+
+    aside#download_div {
+        display: none;
     }
 }

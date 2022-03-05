@@ -431,6 +431,9 @@ div.footer_legal {
         font-size: 1.8rem;
     }
 
+    li#translator_button {
+        padding: 0 0 1.2em 0;
+    }
 }
 
 /* Mobile view */
