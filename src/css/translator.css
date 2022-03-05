@@ -380,11 +380,12 @@ div#script_view {
     padding: 10px;
 }
 
-div#script_view span {
+div#script_view span div pre {
     display: block;
-    position: relative;
-    width: 100%;
+    font-family: monospace;
+    white-space: pre;
 }
+
 
 /*              Footer attributes              */
 footer {
@@ -434,6 +435,7 @@ div.footer_legal {
     li#translator_button {
         padding: 0 0 1.2em 0;
     }
+
 }
 
 /* Mobile view */
