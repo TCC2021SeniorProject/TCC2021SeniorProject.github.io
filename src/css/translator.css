@@ -80,7 +80,7 @@ nav#nav_bar {
     z-index: 5;
     font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
     font-size: 1rem;
-    background: linear-gradient(0.25turn, #0a0a0a, #181818, #000000);
+    background: linear-gradient(0.25turn, #882020, #963c3c, #882020);
     height: 160px;
     width: 100%;
     padding: 0;
@@ -195,10 +195,16 @@ li.nav_item p {
     padding: 0.2em 0.5em 0.2em 0.5em;
 }
 
+li#translator_button {
+    border-radius: 10px;
+    border: 3px solid #b9b9b9;
+    height: 30px;
+    padding: 0 1em 0 1em;
+}
+
 li#translator_button a {
     color: #A49C5B;
-    font-size: 20px;
-    height: 35px;
+    height: 25px;
 }
 
 li#translator_button a:hover {
@@ -221,10 +227,17 @@ div#submission_control {
     font-weight: 500;
 }
 
+form#upload_form {
+    display: inline;
+    width: 20%;
+}
+
 label.xmlLabel, label.execLabel {
-    display: block;
-    width: 100%;
+    display: flex;
     text-align: center;
+    width: fit-content;
+    cursor: pointer;
+    margin: 0 20% 0 20%;
 }
 
 input#xmlFile {
@@ -243,6 +256,7 @@ input#xmlFile::file-selector-button {
     height: 35px;
     width: 100px;
     margin-right: 2em;
+    cursor: pointer;
 }
 
 input.execFile::file-selector-button {
@@ -253,6 +267,7 @@ input.execFile::file-selector-button {
     height: 35px;
     width: 100px;
     margin-right: 2em;
+    cursor: pointer;
 }
 
 input#xmlFile::file-selector-button:hover {
@@ -310,10 +325,8 @@ div.submit_wrapper {
 }
 
 input#submit_button {
-    background-color: cornflowerblue;
     border: none;
     border-radius: 5px;
-    color: #f1f1f1;
     width: 100px;
     height: 35px;
 }
@@ -321,10 +334,8 @@ input#submit_button {
 /* View button */
 
 input#view_button {
-    background-color: #000000;
     border: none;
     border-radius: 5px;
-    color: #f1f1f1;
     width: 100px;
     height: 35px;
 }
@@ -496,6 +507,7 @@ div.footer_legal {
     div.right_nav_items ul {
         display: flex;
         padding: 1em 2em 0 2em;
+        vertical-align: baseline;
     }
 
     div.right_nav_items li {

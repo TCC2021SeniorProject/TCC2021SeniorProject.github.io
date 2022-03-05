@@ -94,7 +94,7 @@ nav#nav_bar {
     z-index: 5;
     font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
     font-size: 1rem;
-    background: linear-gradient(0.25turn, #0a0a0a, #181818, #000000);
+    background: linear-gradient(0.25turn, #882020, #963c3c, #882020);
     height: 160px;
     width: 100%;
     padding: 0;
@@ -627,7 +627,7 @@ div#sponsor_box {
 
 
 /* Mobile view */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
 
     a.nav_bar_icon {
         display: none;
@@ -749,5 +749,4 @@ div#sponsor_box {
         margin: 0 0 0 6em;
         width: 100%;
     }
-
 }

@@ -32,7 +32,6 @@ function navbarReaction() {
             });
 
         } else if (winScrollTop < SCROLL_BOUNDARY && 15 < winScrollTop) { //set dynamic size
-            console.log("middle");
             let fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
             nav_bar_img.css({
                 'width': 30 + 'px',
@@ -41,7 +40,6 @@ function navbarReaction() {
             });
 
             let newHeight = calculateHeightToSet(winScrollTop, 160);
-            console.log(newHeight);
             nav_bar.css({
                 height: newHeight
             });

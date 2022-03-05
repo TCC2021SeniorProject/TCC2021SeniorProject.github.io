@@ -6,8 +6,8 @@
     <title>Translator</title>
     <link rel="stylesheet" href="../css/translator.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../script/translator.js" defer> </script>
     <script type="text/javascript" src="../script/navbar.js" defer> </script>
+    <script type="text/javascript" src="../script/translator.js" defer> </script>
 </head>
 <body>
 <!-- Navigation bar -->
@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li class="nav_item" id="translator_button">
-                        <a href="http://18.188.79.185:8080/">
+                        <a href="">
                             <p>Translator</p>
                         </a>
                     </li>
@@ -54,7 +54,8 @@
 </header>
 <div id="page_container">
     <div id="submission_control">
-        <form id="upload_form" action="/uploadMultiFile" method="post" enctype="multipart/form-data">
+        <form id="upload_form" action="/uploadMultiFile" method="post"
+              enctype="multipart/form-data" onchange="allowSubmit()">
             <label class="xmlLabel" for="xmlFile">
                 UPPAAL XML file
                 <input type="file" id="xmlFile" name="xmlFile" accept="xml, txt"><br><br>
@@ -68,7 +69,8 @@
                 <input id="remove_button" type="button" value="-" onclick="removeRow()">
             </div>
             <div class="submit_wrapper">
-                <input title="Upload file before" id="submit_button" type="submit" value="Translate">
+                <input title="Upload file before" id="submit_button"
+                       type="submit" value="Translate" onclick="allowView()">
                 <div id="system_message">
                     <p th:text="${system_message}" />
                 </div>
