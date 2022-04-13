@@ -33,20 +33,27 @@ function navbarReaction() {
 
         } else if (winScrollTop < SCROLL_BOUNDARY && 15 < winScrollTop) { //set dynamic size
             let fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
+
             nav_bar_img.css({
-                'width': 30 + 'px',
-                'height': 30 + 'px',
+                'width': 35 + 'px',
+                'height': 35 + 'px',
                 'margin-top': 0.2 + 'em',
             });
 
-            let newHeight = calculateHeightToSet(winScrollTop, 160);
-            nav_bar.css({
-                height: newHeight
-            });
+            let newHeight = calculateHeightToSet(winScrollTop, 200);
+            if (newHeight > 70) {
+                nav_bar.css({
+                    height: newHeight
+                });
+            } else {
+                nav_bar.css({
+                    height: 70
+                });
+            }
 
 
             //set opacity on scroll
-            let opacityValue = calculateOpacityValue(winScrollTop, 160);
+            let opacityValue = calculateOpacityValue(winScrollTop, 200);
 
             nav_bar_link.css({
                 opacity: opacityValue - 0.3
@@ -54,6 +61,26 @@ function navbarReaction() {
 
             right_nav_items.css({
                 opacity: opacityValue - 0.3
+            });
+
+        } else {
+            nav_bar_img.css({
+                'width': 35 + 'px',
+                'height': 35 + 'px',
+                'margin-top': 0.2 + 'em',
+            });
+
+            let newHeight = calculateHeightToSet(winScrollTop, 160);
+            nav_bar.css({
+                height: 70
+            });
+
+            nav_bar_link.css({
+                opacity: 0
+            });
+
+            right_nav_items.css({
+                opacity: 0
             });
         }
     });
