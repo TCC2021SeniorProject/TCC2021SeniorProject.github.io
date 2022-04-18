@@ -1,4 +1,41 @@
+let rotational_degree = 0
+
+function getTransitionEndEventName() {
+    let transitions = {
+        "transition"      : "transitionend",
+        "OTransition"     : "oTransitionEnd",
+        "MozTransition"   : "transitionend",
+        "WebkitTransition": "webkitTransitionEnd"
+    }
+    let bodyStyle = document.body.style;
+    for(let transition in transitions) {
+        if(bodyStyle[transition] != undefined) {
+            return transitions[transition];
+        }
+    }
+}
+
+function onTransitionEnd(ev) {
+    const navbar_icon = document.querySelector('.nav_bar_icon img');
+    console.log("transition  finished ");
+    navbar_icon.removeEventListener(null, callback);
+}
+
+function spinIcon(component) {
+    console.log("In");
+    rotational_degree += 360
+    component.style.transform = 'rotate(' + rotational_degree + 'deg)';
+}
+
 function navbarReaction() {
+    let transitionEndEventName = getTransitionEndEventName();
+    const navbar_icon = document.querySelector('.nav_bar_icon img');
+
+    navbar_icon.addEventListener('mouseover', function() {
+        spinIcon(navbar_icon);
+        navbar_icon.addEventListener(transitionEndEventName, onTransitionEnd);
+    });
+
     const SCROLL_BOUNDARY = 120;
     let currentFontSize = calculateFontSize();//vw
     $(window).scroll(function() {
