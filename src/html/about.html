@@ -32,19 +32,19 @@
                     <p class="nav_title">Florida Tech Senior Project</p>
                 </a>
                 <div class="right_nav_items">
-                    <ul>
+                    <ul id="nav_bar_ul">
                         <li class="nav_item" id="current_page">
                             <a href="./about.html">
                                 <p>About</p>
                             </a>
                         </li>
                         <li class="nav_item">
-                            <a href="https://docs.google.com/presentation/d/e/2PACX-1vTh9g5zqGzarbx02DTe307dhtr2jh2ZGw2s3z_i5PmHWZLLvUaUmvNoTafaaiM74w/pub?start=false&loop=false&delayms=60000">
+                            <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/presentation/d/e/2PACX-1vTh9g5zqGzarbx02DTe307dhtr2jh2ZGw2s3z_i5PmHWZLLvUaUmvNoTafaaiM74w/pub?start=false&loop=false&delayms=60000">
                                 <p>Poster</p>
                             </a>
                         </li>
                         <li class="nav_item">
-                            <a href="https://docs.google.com/document/d/e/2PACX-1vTR1galRbyqth2rIW9LEjOb-UaB1CBiDIxxlimPgowPbnZS7ZICKoDJFsquVbSiBg/pub">
+                            <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/e/2PACX-1vTR1galRbyqth2rIW9LEjOb-UaB1CBiDIxxlimPgowPbnZS7ZICKoDJFsquVbSiBg/pub">
                                 <p>E-Book Manual</p>
                             </a>
                         </li>
@@ -66,39 +66,131 @@
 <div id="main_body">
     <!-- Main content -->
     <div id="main_content">
+        <div id="main_content_inner">
+            <div>
+                <h4 id="supplementary_title">Need realization of the IoT system? Try our software!</h4>
+                <h3 class="main_sub_title"> Mission Statement </h3>
+                <article id="mission_statement_content">
+                    &nbsp;&nbsp;Our mission is to provide a service to developers that helps in the deployment of IoT systems.<br><br>
+                    &nbsp;&nbsp;This is achieved through extending the functionality of an already existing and trusted modeling software, UPPAAL.<br><br>
+                    &nbsp;&nbsp;After designing and validating a model in the UPPAAL environment, our translator turns the corresponding model into equivalent Python code.<br><br>
+                    &nbsp;&nbsp;Our translator paired with UPPAAL creates a nearly closed loop solution to developing IoT systems, from the initial design to real world deployment.
+                </article>
+            </div>
+            <div>
+                <h3 class="main_sub_title"> Flow Diagram </h3>
+                <img id="process_diagram_img" src="../img/icons/Diagram.png" alt="none">
+                <p style="text-align: center; font-size: 16px; margin-top: 5px; font-weight: 500;">Figure1. Overall process of the translator</p>
+            </div>
+            <div>
+                <h3 class="main_sub_title"> Application </h3>
+                <ul id="application_ul_list">
+                    <li class="application_item">
+                        <div class="image_frame">
+                            <img src="https://bs-uploads.toptal.io/blackfish-uploads/uploaded_file/file/39332/image-1566402184774-80ed60aba9fd255bac32ecc38c477780.jpg"
+                                 alt="home_appliance"/>
+                        </div>
+                        <div class="application_text_frame">
+                            <h3>Home Appliance</h3>
+                            <p>This tool can assist you on building up your own home IoT system for multiple electronic devices.</p>
+                        </div>
+                    </li>
+                    <li class="application_item">
+                        <div class="image_frame">
+                            <img src="https://humans-in-space.jaxa.jp/en/assets/images/future/top/img03.jpg"
+                                 alt="space"/>
+                        </div>
+                        <div class="application_text_frame">
+                            <h3>Planet Exploration / Excavation</h3>
+                            <p>This tool can assist on space exploration projects with multiple excavation robots.</p>
+                        </div>
+                    </li>
+                    <li class="application_item">
+                        <div class="image_frame">
+                            <img src="https://images.tmcnet.com/tmc/misc/articles/image/2019-may/1213902295-IIoT-1000x536.jpeg"
+                                 alt="industry"/>
+                        </div>
+                        <div class="application_text_frame">
+                            <h3>Industry Level IoT Platforms</h3>
+                            <p>Overburdened with industry-level electrical components and machines? Try this to construct a harmonic IoT system!</p>
+                        </div>
+                    </li>
+                    <li class="application_item">
+                        <div class="image_frame">
+                            <img src="https://rpmanetworks.com/wp-content/uploads/2021/09/FB-V1.1-1.png"
+                                 alt="auto"/>
+                        </div>
+                        <div class="application_text_frame">
+                            <h3>Automobile IoT System</h3>
+                            <p>Use model translator to build traffic congestion control system, or even more features on car auto.</p>
+                        </div>
+                    </li>
+                    <li class="application_item">
+                        <div class="image_frame">
+                            <img src="https://cdn.corporatefinanceinstitute.com/assets/edtech-education-technology-1024x580.jpeg"
+                                 alt="academic"
+                                 style="object-position: right"/>
+                        </div>
+                        <div class="application_text_frame">
+                            <h3>Academic/Educational IoT Platform</h3>
+                            <p>Tired of manual control on electronic devices prior to the lectures or seminars?
+                                Create labor-reducing system for the academia.</p>
+                        </div>
+                    </li>
+                    <li class="application_item">
+                        <div class="image_frame">
+                            <img src="https://www.cloudcredential.org/wp-content/uploads/2019/09/IoT-Guide-Image-1.jpg"
+                                 alt="development"/>
+                        </div>
+                        <div class="application_text_frame">
+                            <h3>IoT System Development</h3>
+                            <p>This will be applicable to all system developers who are tired of re-writing the code on logic changes.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <!-- Downloads -->
-        <article id="mission_statement_section">
-            <h3 class="sub_header_title"> Mission Statement </h3>
-            <p id="mission_statement_content">
-                &nbsp;&nbsp;Our mission is to provide a service to developers that helps in the deployment of IoT systems.<br><br>
-                &nbsp;&nbsp;This is achieved through extending the functionality of an already existing and trusted modeling software, UPPAAL.<br><br>
-                &nbsp;&nbsp;After designing and validating a model in the UPPAAL environment, our translator turns the corresponding model into equivalent Python code.<br><br>
-                &nbsp;&nbsp;Our translator paired with UPPAAL creates a nearly closed loop solution to developing IoT systems, from the initial design to real world deployment.
-            </p>
-            <h3 class="sub_header_title"> Flow Diagram </h3>
-            <img id="process_diagram_img" src="../img/icons/Diagram.png" alt="none">
-
-        </article>
         <aside id="download_div">
-            <h2>Required Software</h2>
+            <h2>Required Softwares</h2>
             <div class="inner_div">
                 <a class="download_link" href="https://www.java.com/en/download/" target="_blank" rel="noopener noreferrer">
-                    <p class="version_p">&nbsp(Above Java 6)</p>
-                    <p class="link_title"> Download Java for UPPAAL </p>
+                    <p class="link_title"> Download Java for UPPAAL <br> <span class="version_p">(Above Java 6)</span> </p>
                 </a>
                 <a class="download_link" href="https://uppaal.org/downloads/" target="_blank" rel="noopener noreferrer">
-                    <p class="version_p">&nbsp(4.0.15)</p>
-                    <p class="link_title"> Download UPPAAL </p>
+                    <p class="link_title"> Download UPPAAL <br><span class="version_p">(4.0.15)</span> </p>
                 </a>
                 <a class="download_link" href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
-                    <p class="version_p">&nbsp(3.6.9)</p>
-                    <p class="link_title"> Download Python </p>
+                    <p class="link_title"> Download Python <br><span class="version_p">(3.9)</span> </p>
+                </a>
+            </div>
+            <h2>Github Repositories</h2>
+            <div class="inner_div">
+                <a class="download_link" href="https://github.com/TCC2021SeniorProject/ModelTranslator" target="_blank" rel="noopener noreferrer">
+                    <p class="link_title"> Translator Repository <br> <span class="version_p">(Tony Baek)</span> </p>
+                </a>
+                <a class="download_link" href="https://github.com/TCC2021SeniorProject/IoTdevices" target="_blank" rel="noopener noreferrer">
+                    <p class="link_title"> Embedded Repository <br><span class="version_p">(Cael Shoop, Cameron Wright)</span> </p>
+                </a>
+                <a class="download_link" href="https://github.com/TCC2021SeniorProject/TCC2021SeniorProject.github.io" target="_blank" rel="noopener noreferrer">
+                    <p class="link_title"> Website Repository <br><span class="version_p">(Tony Baek)</span> </p>
+                </a>
+                <a class="download_link" href="https://github.com/TCC2021SeniorProject/ReactiveWebpage" target="_blank" rel="noopener noreferrer">
+                    <p class="link_title"> Webserver Repository <br><span class="version_p">(Tony Baek)</span> </p>
+                </a>
+            </div>
+            <h2>Developer Manual</h2>
+            <div class="inner_div">
+                <a class="download_link"target="_blank" rel="noopener noreferrer"
+                   href="https://docs.google.com/document/d/e/2PACX-1vTQAC2hD6_r6_ckhQuZN_VaXPHurE5tMhK9cMpGr11ziERjHVnKVAgYDZ9s_YL-KbQnqfOoyAw3_wcO/pub">
+                    <p class="link_title"> Developer Manual <br> <span class="version_p">(In progress)</span> </p>
                 </a>
             </div>
         </aside>
     </div>
+
+    <!-- Contact & Info boxes -->
     <div id="contact_section">
-        <!-- Contact & Info boxes -->
         <h3 class="sub_header_title"> Contact Us </h3>
         <div class="box_wrapper" id="intro_div">
             <div class="box_repeater" id="intro_box">
@@ -264,7 +356,7 @@
                                     Team member
                                     <br>
                                     <br>
-                                    Software Tester, Embedded Device Developer
+                                    Tester, Embedded Device Developer
                                     <br>
                                     <br>
                                     <br>
@@ -300,7 +392,7 @@
         </div>
         <div class="footer_legal">
             <p>
-                2021 Model Based IoT<br><br> Website hosted by Github<br><br>Designed by Tony Baek
+                2021-2022 Model Based IoT<br><br> Website hosted on Github<br><br>Designed by Tony Baek
                 <a>
 
                 </a>

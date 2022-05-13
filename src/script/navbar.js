@@ -36,11 +36,14 @@ function navbarReaction() {
         navbar_icon.addEventListener(transitionEndEventName, onTransitionEnd);
     });
 
+    let nav_bar = $('#nav_bar');
+
     const SCROLL_BOUNDARY = 120;
     let currentFontSize = calculateFontSize();//vw
+    let initial_nav_height = nav_bar.height();
     $(window).scroll(function() {
+
         let nav_bar_img = $('.nav_bar_icon img');
-        let nav_bar = $('#nav_bar');
         let nav_bar_link = $('#nav_bar_link');
         let right_nav_items = $('.right_nav_items');
 
@@ -55,9 +58,9 @@ function navbarReaction() {
                 'height': 70 + 'px',
                 'margin-top': 2 + 'em',
             });
-
+            console.log(initial_nav_height);
             nav_bar.css({
-                height: 160
+               height: initial_nav_height
             });
 
             nav_bar_link.css({
@@ -69,8 +72,6 @@ function navbarReaction() {
             });
 
         } else if (winScrollTop < SCROLL_BOUNDARY && 15 < winScrollTop) { //set dynamic size
-            let fontSizeValue = getCurrentFontSize(winScrollTop, currentFontSize);
-
             nav_bar_img.css({
                 'width': 35 + 'px',
                 'height': 35 + 'px',
@@ -87,7 +88,6 @@ function navbarReaction() {
                     height: 70
                 });
             }
-
 
             //set opacity on scroll
             let opacityValue = calculateOpacityValue(winScrollTop, 200);

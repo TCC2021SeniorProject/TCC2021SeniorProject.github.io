@@ -79,6 +79,22 @@ nav#nav_bar {
     padding: 0;
     margin: 0;
 }
+/* Nav bar */
+
+nav#nav_bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
+    font-size: 1rem;
+    background: linear-gradient(0.25turn, #882020, #963c3c, #882020);
+    height: 160px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
 
 /* Nav Center Header */
 
@@ -142,9 +158,9 @@ a#nav_bar_link p {
 /* right side of the nav */
 
 li#current_page {
-    border-radius: 10px;
+    border-radius: 5px;
     border: 3px solid #b9b9b9;
-    height: 25px;
+    height: 30px;
     padding: 0 1em 0 1em;
 }
 
@@ -169,14 +185,12 @@ div.right_nav_items ul {
 li.nav_item {
     display: flex;
     margin: 0 1em 0 1em;
-    height: 30px;
     text-align: center;
     font-weight: 600;
     transition-duration: 0.8s;
 }
 
 li.nav_item a {
-    font-size: 1rem;
     list-style: none;
     color: #b9b9b9;
     text-decoration: none;
@@ -184,8 +198,8 @@ li.nav_item a {
 }
 
 li.nav_item p {
-    margin: 0;
-    padding: 0.2em 0.5em 0.2em 0.5em;
+    font-size: 20px;
+    margin: auto;
 }
 
 li#translator_button a {
