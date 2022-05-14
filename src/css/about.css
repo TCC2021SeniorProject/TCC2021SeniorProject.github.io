@@ -32,7 +32,7 @@ footer {
 
 div#main_body {
     display: block;
-    margin-top: 250px;
+    margin-top: 50px;
 }
 
 /*            Github link section            */
@@ -90,7 +90,6 @@ div#main_content {
 
 nav#nav_bar {
     display: flex;
-    position: fixed;
     left: 0;
     top: 0;
     z-index: 5;
@@ -254,7 +253,7 @@ h3.main_sub_title:after {
     display: flex;
     content: ".";
     font-size: 1px;
-    width: 550px;
+    width: 350px;
     border-top: 5px solid transparent;
     background: linear-gradient(0.25turn, #882020, #963c3c, #dc5e5e);
     background: -moz-linear-gradient(0, #882020, #963c3c, #dc5e5e);
@@ -713,7 +712,7 @@ div#sponsor_box {
     }
 
     a#nav_bar_link {
-        width: auto;
+        width: 100%;
     }
 
     a#nav_bar_link p {
@@ -888,11 +887,12 @@ div#sponsor_box {
     }
 
     div.box_repeater {
-        width: 100%;
-        grid-template-columns: repeat(1, calc(50%));
+        position: relative;
+        width: 75%;
+        grid-template-columns: repeat(1, calc(65%));
         grid-gap: 3%;
         padding: 0;
-        margin: 0 0 0 25%;
+        left: 25%;
     }
 
     aside#download_div {
@@ -904,7 +904,7 @@ div#sponsor_box {
     }
 
     div#contact_section > h3.sub_header_title {
-        margin-left: 40%;
+        margin-left: 35%;
     }
 
     article#mission_statement_content {
