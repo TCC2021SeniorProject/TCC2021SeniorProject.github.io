@@ -15,6 +15,7 @@ body {
     transition-duration: 0.2s;
     margin: 0;
     overflow-x: hidden;
+    min-width: 500px;
 }
 
 header {
@@ -847,7 +848,7 @@ div#sponsor_box {
 
     div.right_nav_items ul {
         display: flex;
-        padding: 1em 2em 0 2em;
+        padding: 1em 2em 0 1em;
     }
 
     div.right_nav_items li {

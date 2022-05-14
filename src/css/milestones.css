@@ -8,12 +8,12 @@ html {
 
 body {
     width: 100%;
-    max-width: 100%;
     background-color: #f1f1f1;
     scroll-behavior: smooth;
     padding-top: 100px;
     margin: 0;
     transition-duration: 0.2s;
+    min-width: 650px;
 }
 
 header {
@@ -65,20 +65,6 @@ aside.github_box a img.image {
     filter: drop-shadow(5px 5px 5px #222222);
 }
 
-nav#nav_bar {
-    display: flex;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 5;
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
-    font-size: 1rem;
-    background: linear-gradient(0.25turn, #882020, #963c3c, #882020);
-    height: 160px;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
 /* Nav bar */
 
 nav#nav_bar {
@@ -95,7 +81,6 @@ nav#nav_bar {
     padding: 0;
     margin: 0;
 }
-
 /* Nav Center Header */
 
 div#nav_bar_lower_wrapper {
@@ -352,7 +337,7 @@ table {
 
   h5.subject_and_time {
     width: 18%;
-    font-size: 0.9rem;
+    font-size: 12px;
     font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
     min-width: 18%;
     margin-left: 1%;
@@ -542,6 +527,10 @@ div.footer_legal {
 
 /* Mobile view */
 @media only screen and (max-width: 900px) {
+    body {
+        margin-top: 120px;
+        transition-duration: 0s;
+    }
 
     a.nav_bar_icon {
         display: none;
@@ -567,13 +556,23 @@ div.footer_legal {
         width : 25px;
     }
 
+    nav#nav_bar {
+        height: 250px;
+    }
+
     div#nav_bar_top_wrapper {
         margin: 0;
     }
 
     div.right_nav_items {
+        display: block;
         margin: 0;
         padding: 0;
+        transition-duration: 0s;
+    }
+
+    div.right_nav_items ul li {
+        display: block;
     }
 
     section#main_section {
@@ -585,18 +584,37 @@ div.footer_legal {
         width: 100%;
     }
 
-    nav#nav_bar {
-        height: 100px;
-    }
-
     div#nav_bar_lower_wrapper {
         display: flex;
         position: absolute;
         bottom: 2em;
     }
 
+
+
     div.right_nav_items {
         display: block;
+        width: 100%;
+        margin-top: 1em;
+    }
+
+    div.right_nav_items ul {
+        display: block;
+        padding: 0;
+        margin: 0 0 0 2%;
+        width: 95%;
+    }
+
+    div.right_nav_items li {
+        margin-bottom: 1em;
+        padding: 0;
+        border: 3px solid #b9b9b9;
+        border-radius: 10px;
+        font-size: 0.7rem;
+    }
+
+    div.right_nav_items li a {
+        width: 100%;
     }
 
     input#active:checked ~ .right_nav_items{
@@ -616,27 +634,11 @@ div.footer_legal {
         font-size: 2rem;
     }
 
-    div.right_nav_items ul {
-        display: flex;
-        padding: 1em 2em 0 2em;
-    }
-
-    div.right_nav_items li {
-        margin-bottom: 1em;
-        padding: 0;
-        border: 3px solid #b9b9b9;
-        border-radius: 10px;
-        font-size: 0.7rem;
-    }
-
     div#nav_head_title {
         padding: 0 0 0 2em;
         margin-top: 3em;
     }
 
-    div.right_nav_items li a {
-        width: 100%;
-    }
 
     .subject_span_icon {
         padding-left: 5px;
