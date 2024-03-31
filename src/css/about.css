@@ -629,6 +629,7 @@ p.hover_name~h3 {
 }
 
 div#sponsor_box {
+    display: grid;
     box-shadow: 5px 5px 20px 0 #A49C5B;
 }
 
